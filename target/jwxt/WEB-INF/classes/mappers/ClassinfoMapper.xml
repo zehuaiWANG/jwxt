@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jwxt.dao.ClassinfoMapper" >
+  <resultMap id="BaseResultMap" type="com.jwxt.pojo.Classinfo" >
+    <constructor >
+      <idArg column="class_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="class_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="class_credit" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="class_tutor" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="class_time" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="class_location" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="class_vacancies" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    class_id, class_name, class_credit, class_tutor, class_time, class_location, class_vacancies, 
+    create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from jwxt_classinfo
+    where class_id = #{classId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from jwxt_classinfo
+    where class_id = #{classId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.jwxt.pojo.Classinfo" >
+    insert into jwxt_classinfo (class_id, class_name, class_credit, 
+      class_tutor, class_time, class_location, 
+      class_vacancies, create_time, update_time
+      )
+    values (#{classId,jdbcType=VARCHAR}, #{className,jdbcType=VARCHAR}, #{classCredit,jdbcType=INTEGER}, 
+      #{classTutor,jdbcType=VARCHAR}, #{classTime,jdbcType=VARCHAR}, #{classLocation,jdbcType=VARCHAR}, 
+      #{classVacancies,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jwxt.pojo.Classinfo" >
+    insert into jwxt_classinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="classId != null" >
+        class_id,
+      </if>
+      <if test="className != null" >
+        class_name,
+      </if>
+      <if test="classCredit != null" >
+        class_credit,
+      </if>
+      <if test="classTutor != null" >
+        class_tutor,
+      </if>
+      <if test="classTime != null" >
+        class_time,
+      </if>
+      <if test="classLocation != null" >
+        class_location,
+      </if>
+      <if test="classVacancies != null" >
+        class_vacancies,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="classId != null" >
+        #{classId,jdbcType=VARCHAR},
+      </if>
+      <if test="className != null" >
+        #{className,jdbcType=VARCHAR},
+      </if>
+      <if test="classCredit != null" >
+        #{classCredit,jdbcType=INTEGER},
+      </if>
+      <if test="classTutor != null" >
+        #{classTutor,jdbcType=VARCHAR},
+      </if>
+      <if test="classTime != null" >
+        #{classTime,jdbcType=VARCHAR},
+      </if>
+      <if test="classLocation != null" >
+        #{classLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="classVacancies != null" >
+        #{classVacancies,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jwxt.pojo.Classinfo" >
+    update jwxt_classinfo
+    <set >
+      <if test="className != null" >
+        class_name = #{className,jdbcType=VARCHAR},
+      </if>
+      <if test="classCredit != null" >
+        class_credit = #{classCredit,jdbcType=INTEGER},
+      </if>
+      <if test="classTutor != null" >
+        class_tutor = #{classTutor,jdbcType=VARCHAR},
+      </if>
+      <if test="classTime != null" >
+        class_time = #{classTime,jdbcType=VARCHAR},
+      </if>
+      <if test="classLocation != null" >
+        class_location = #{classLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="classVacancies != null" >
+        class_vacancies = #{classVacancies,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where class_id = #{classId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jwxt.pojo.Classinfo" >
+    update jwxt_classinfo
+    set class_name = #{className,jdbcType=VARCHAR},
+      class_credit = #{classCredit,jdbcType=INTEGER},
+      class_tutor = #{classTutor,jdbcType=VARCHAR},
+      class_time = #{classTime,jdbcType=VARCHAR},
+      class_location = #{classLocation,jdbcType=VARCHAR},
+      class_vacancies = #{classVacancies,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where class_id = #{classId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectAllClassInfo" resultMap="BaseResultMap">
+    SELECT * FROM jwxt_classinfo
+  </select>
+ <select id="selectInfo" resultMap="BaseResultMap">
+    SELECT * FROM jwxt_classinfo where class_id LIKE concat(concat('%',#{info}),'%')
+    or (class_name LIKE concat(concat('%',#{info}),'%'))
+    or (class_tutor LIKE concat(concat('%',#{info}),'%'))
+  </select>
+</mapper>
