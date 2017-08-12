@@ -59,4 +59,9 @@ public class StudentinfoServiceImpl implements IStudentinfoService {
         }
     }
 
+    public ServerResponse<String> delstuinfo(Integer studentid, String classid){
+    int result = studentinfoMapper.delstuinfo(studentid,classid);
+    if (result>0) return ServerResponse.createBySuccessMessage("退课成功");
+        return ServerResponse.createByErrorMessage("退课失败");
+    }
 }

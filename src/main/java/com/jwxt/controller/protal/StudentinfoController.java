@@ -33,4 +33,9 @@ public class StudentinfoController {
     return iStudentinfoService.insertstuinfo(studentid,classid,classtime);
     }
 
+    @RequestMapping(value ="delstuinfo.do",method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<String> delstuinfo(Integer studentid,String classid){
+        return iStudentinfoService.delstuinfo(studentid,classid);
+    }
 }

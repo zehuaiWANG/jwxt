@@ -1,6 +1,7 @@
 package com.jwxt.dao;
 
 import com.jwxt.pojo.Studentinfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface StudentinfoMapper {
     int updateByPrimaryKey(Studentinfo record);
 
     List<Studentinfo> selectstuinfoByPrimaryKey(Integer studentId);
+
+    int delstuinfo(@Param("studentId") Integer studentId,@Param("classId") String classId);
 }

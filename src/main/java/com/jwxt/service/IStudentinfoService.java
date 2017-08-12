@@ -7,4 +7,5 @@ public interface IStudentinfoService {
     List<Studentinfo> selectStudnetinfoByPrimaryKey(Integer studentId);
    // void insertstuinfo(Integer studentid, String classid,String classtime);
     ServerResponse<String> insertstuinfo(Integer studentid, String classid,String classtime);
+    ServerResponse<String> delstuinfo(Integer studentid, String classid);
 }

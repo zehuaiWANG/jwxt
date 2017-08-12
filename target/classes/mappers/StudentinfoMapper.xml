@@ -98,4 +98,10 @@
     from jwxt_studentinfo
     where student_id = #{studentId,jdbcType=INTEGER}
   </select>
+
+  <delete id="delstuinfo"  parameterType="map" >
+    delete from jwxt_studentinfo
+    where student_id = #{studentId,jdbcType=INTEGER}
+    and class_id = #{classId,jdbcType=VARCHAR}
+  </delete>
 </mapper>
