@@ -7,18 +7,21 @@ public class Studentinfo {
 
     private String classId;
 
+    private String className;
+
+    private String classTime;
+
     private Date createTime;
 
     private Date updateTime;
 
-    private String classTime;
-
-    public Studentinfo(Integer studentId, String classId, Date createTime, Date updateTime, String classTime) {
+    public Studentinfo(Integer studentId, String classId, String className, String classTime, Date createTime, Date updateTime) {
         this.studentId = studentId;
         this.classId = classId;
+        this.className = className;
+        this.classTime = classTime;
         this.createTime = createTime;
         this.updateTime = updateTime;
-        this.classTime = classTime;
     }
 
     public Studentinfo() {
@@ -41,6 +44,22 @@ public class Studentinfo {
         this.classId = classId == null ? null : classId.trim();
     }
 
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className == null ? null : className.trim();
+    }
+
+    public String getClassTime() {
+        return classTime;
+    }
+
+    public void setClassTime(String classTime) {
+        this.classTime = classTime == null ? null : classTime.trim();
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -55,13 +74,5 @@ public class Studentinfo {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
-    }
-
-    public String getClassTime() {
-        return classTime;
-    }
-
-    public void setClassTime(String classTime) {
-        this.classTime = classTime == null ? null : classTime.trim();
     }
 }

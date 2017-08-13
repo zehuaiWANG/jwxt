@@ -3,34 +3,77 @@ package com.jwxt.controller.protal;
 import com.jwxt.common.ServerResponse;
 import com.jwxt.pojo.Classinfo;
 import com.jwxt.pojo.Studentinfo;
+import com.jwxt.pojo.StudentinfoData;
+import com.jwxt.service.IClassinfoService;
 import com.jwxt.service.IStudentinfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
 @Controller
 @RequestMapping("/student/")
 public class StudentinfoController {
     @Autowired
     private IStudentinfoService iStudentinfoService;
+
+    @Autowired
+    private IClassinfoService iClassinfoService;
     @RequestMapping(value ="selectstuinfoByPrimaryKey.do",method = RequestMethod.POST)
     @ResponseBody
-    public List<Studentinfo> selectstuinfoByPrimaryKey(Integer studentid){
-        return iStudentinfoService.selectStudnetinfoByPrimaryKey(studentid);
+    public List<StudentinfoData> selectstuinfoByPrimaryKey(Integer studentid){
+        List<Studentinfo> list1 =  iStudentinfoService.selectStudnetinfoByPrimaryKey(studentid);
+        List<StudentinfoData> list2 = new ArrayList<>();
+
+       for (int i = 0;i<list1.size();i++){
+           String[] str = list1.get(i).getClassTime().split(",");
+          for (int j=0;j<str.length;j++){
+               StudentinfoData data = new StudentinfoData();
+              data.setClassId(list1.get(i).getClassId());
+              data.setStudentId(list1.get(i).getStudentId());
+              data.setClassName(list1.get(i).getClassName());
+               data.setWeek(str[j].split("_")[0]);
+               data.setDay(str[j].split("_")[1]);
+               data.setTime(str[j].split("_")[2]);
+               data.setLocation(str[j].split("_")[3]);
+               list2.add(data);
+           }
+       }
+        return list2;
+    }
+
+    @RequestMapping(value ="insert.do",method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<String> insertstuinfo(Integer studentid, String classid, String classtime) {
+        return iStudentinfoService.insertstuinfo(studentid,classid,classtime);
+    }
+
+    @RequestMapping(value ="getallclassinfo.do",method = RequestMethod.POST)
+    @ResponseBody
+    public List<Classinfo> getallclassinfo(Integer studentid){
+        List<Classinfo> list = iClassinfoService.findClassinfoList();
+        for (int i=0;i<list.size();i++)
+        list.get(i).setClassVacancies( new Integer(insertstuinfo(studentid,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
+        return list;
     }
 
     @RequestMapping(value ="insertstuinfo.do",method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<String> insertstuinfo(Integer studentid, String classid, String classtime) {
-    return iStudentinfoService.insertstuinfo(studentid,classid,classtime);
+    public ServerResponse<String> insert(Integer studentid, String classid, String classname,String classtime) {
+        return iStudentinfoService.insert(studentid,classid,classname,classtime);
+    }
+
+    @RequestMapping(value ="selectInfo.do",method = RequestMethod.POST)
+    @ResponseBody
+    public List<Classinfo> selectInfo(Integer studentid,String info){
+        List<Classinfo> list = iClassinfoService.selectInfo(info);
+        for (int i=0;i<list.size();i++)
+            list.get(i).setClassVacancies( new Integer(insertstuinfo(studentid,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
+        return list;
     }
 
     @RequestMapping(value ="delstuinfo.do",method = RequestMethod.POST)

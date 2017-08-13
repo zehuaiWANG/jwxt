@@ -92,4 +92,7 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where student_id = #{studentId,jdbcType=INTEGER}
   </update>
+  <select id="selectAllLogInfo" resultMap="BaseResultMap">
+    SELECT * FROM jwxt_loginfo
+  </select>
 </mapper>

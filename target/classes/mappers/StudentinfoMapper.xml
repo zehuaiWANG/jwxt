@@ -3,31 +3,24 @@
 <mapper namespace="com.jwxt.dao.StudentinfoMapper" >
   <resultMap id="BaseResultMap" type="com.jwxt.pojo.Studentinfo" >
     <constructor >
-      <idArg column="student_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="student_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="class_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="class_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="class_time" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="class_time" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
-    student_id, class_id, create_time, update_time, class_time
+    student_id, class_id, class_name, class_time, create_time, update_time
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from jwxt_studentinfo
-    where student_id = #{studentId,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from jwxt_studentinfo
-    where student_id = #{studentId,jdbcType=INTEGER}
-  </delete>
   <insert id="insert" parameterType="com.jwxt.pojo.Studentinfo" >
-    insert into jwxt_studentinfo (student_id, class_id, create_time, 
-      update_time, class_time)
-    values (#{studentId,jdbcType=INTEGER}, #{classId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{classTime,jdbcType=VARCHAR})
+    insert into jwxt_studentinfo (student_id, class_id, class_name, 
+      class_time, create_time, update_time
+      )
+    values (#{studentId,jdbcType=INTEGER}, #{classId,jdbcType=VARCHAR}, #{className,jdbcType=VARCHAR}, 
+      #{classTime,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.jwxt.pojo.Studentinfo" >
     insert into jwxt_studentinfo
@@ -38,14 +31,17 @@
       <if test="classId != null" >
         class_id,
       </if>
+      <if test="className != null" >
+        class_name,
+      </if>
+      <if test="classTime != null" >
+        class_time,
+      </if>
       <if test="createTime != null" >
         create_time,
       </if>
       <if test="updateTime != null" >
         update_time,
-      </if>
-      <if test="classTime != null" >
-        class_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -55,50 +51,24 @@
       <if test="classId != null" >
         #{classId,jdbcType=VARCHAR},
       </if>
+      <if test="className != null" >
+        #{className,jdbcType=VARCHAR},
+      </if>
+      <if test="classTime != null" >
+        #{classTime,jdbcType=VARCHAR},
+      </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null" >
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="classTime != null" >
-        #{classTime,jdbcType=VARCHAR},
-      </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jwxt.pojo.Studentinfo" >
-    update jwxt_studentinfo
-    <set >
-      <if test="classId != null" >
-        class_id = #{classId,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="classTime != null" >
-        class_time = #{classTime,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where student_id = #{studentId,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.jwxt.pojo.Studentinfo" >
-    update jwxt_studentinfo
-    set class_id = #{classId,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      class_time = #{classTime,jdbcType=VARCHAR}
-    where student_id = #{studentId,jdbcType=INTEGER}
-  </update>
-  <select id="selectstuinfoByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select
-    <include refid="Base_Column_List" />
-    from jwxt_studentinfo
+  <select id="selectstuinfoByPrimaryKey" resultMap="BaseResultMap">
+    SELECT * FROM jwxt_studentinfo
     where student_id = #{studentId,jdbcType=INTEGER}
   </select>
-
   <delete id="delstuinfo"  parameterType="map" >
     delete from jwxt_studentinfo
     where student_id = #{studentId,jdbcType=INTEGER}

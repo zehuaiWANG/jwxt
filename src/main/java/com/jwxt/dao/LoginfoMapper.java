@@ -2,6 +2,8 @@ package com.jwxt.dao;
 
 import com.jwxt.pojo.Loginfo;
 
+import java.util.List;
+
 public interface LoginfoMapper {
     int deleteByPrimaryKey(Integer studentId);
 
@@ -14,4 +16,6 @@ public interface LoginfoMapper {
     int updateByPrimaryKeySelective(Loginfo record);
 
     int updateByPrimaryKey(Loginfo record);
+
+    List<Loginfo> selectAllLogInfo();
 }
