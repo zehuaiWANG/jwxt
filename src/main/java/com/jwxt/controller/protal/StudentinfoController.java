@@ -1,5 +1,7 @@
 package com.jwxt.controller.protal;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.jwxt.common.ServerResponse;
 import com.jwxt.pojo.Classinfo;
 import com.jwxt.pojo.Studentinfo;
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
@@ -80,5 +83,16 @@ public class StudentinfoController {
     @ResponseBody
     public ServerResponse<String> delstuinfo(Integer studentid,String classid){
         return iStudentinfoService.delstuinfo(studentid,classid);
+    }
+
+    @RequestMapping(value ="getallclassinfoByPageHelper.do",method = RequestMethod.POST)
+    @ResponseBody
+    public PageInfo fo(Integer studentid, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
+        PageHelper.startPage(pageNum,pageSize);
+        List<Classinfo> list = iClassinfoService.findClassinfoList();
+        for (int i=0;i<list.size();i++)
+            list.get(i).setClassVacancies( new Integer(insertstuinfo(studentid,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
+        PageInfo pageResult = new PageInfo(list);
+        return pageResult;
     }
 }
