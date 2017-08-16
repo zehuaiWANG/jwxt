@@ -42,6 +42,23 @@ public class StudentinfoController {
                data.setWeek(str[j].split("_")[0]);
                data.setDay(str[j].split("_")[1]);
                data.setTime(str[j].split("_")[2]);
+               switch (str[j].split("_")[2]){
+                   case "8:00-9:50":data.setClass_time_num(1);break;
+                   case "8:00-10:00":data.setClass_time_num(1);break;
+                   case "10:00-11:50":data.setClass_time_num(2);break;
+                   case "10:00-12:00":data.setClass_time_num(2);break;
+                   case "10:10-12:00":data.setClass_time_num(2);break;
+                   case "8:00-11:50":data.setClass_time_num(12);break;
+                   case "8:00-12:00":data.setClass_time_num(12);break;
+                   case "14:00-15:50":data.setClass_time_num(3);break;
+                   case "14:00-16:00":data.setClass_time_num(3);break;
+                   case "16:00-17:50":data.setClass_time_num(4);break;
+                   case "16:00-18:00":data.setClass_time_num(4);break;
+                   case "16:10-18:00":data.setClass_time_num(4);break;
+                   case "19:00-21:00":data.setClass_time_num(5);break;
+                   case "19:00-20:50":data.setClass_time_num(5);break;
+                   default:data.setClass_time_num(0);break;
+               }
                data.setLocation(str[j].split("_")[3]);
                list2.add(data);
            }

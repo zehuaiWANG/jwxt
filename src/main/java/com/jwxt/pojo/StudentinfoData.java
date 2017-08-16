@@ -15,8 +15,9 @@ public class StudentinfoData {
 
     private String location;
 
+    private Integer class_time_num;
     public StudentinfoData(){}
-    public StudentinfoData(Integer studentId, String classId, String className, String week, String day, String time, String location) {
+    public StudentinfoData(Integer studentId, String classId, String className, String week, String day, String time, String location,Integer class_time_num) {
         this.studentId = studentId;
         this.classId = classId;
         this.className = className;
@@ -24,6 +25,7 @@ public class StudentinfoData {
         this.day = day;
         this.time = time;
         this.location = location;
+        this.class_time_num = class_time_num;
     }
 
     public Integer getStudentId() {
@@ -80,5 +82,13 @@ public class StudentinfoData {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public Integer getClass_time_num() {
+        return class_time_num;
+    }
+
+    public void setClass_time_num(Integer class_time_num) {
+        this.class_time_num = class_time_num;
     }
 }

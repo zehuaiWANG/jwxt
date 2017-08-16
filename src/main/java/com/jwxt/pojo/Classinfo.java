@@ -21,7 +21,9 @@ public class Classinfo {
 
     private Date updateTime;
 
-    public Classinfo(String classId, String className, Integer classCredit, String classTutor, String classTime, String classLocation, Integer classVacancies, Date createTime, Date updateTime) {
+    private Integer necessary;
+
+    public Classinfo(String classId, String className, Integer classCredit, String classTutor, String classTime, String classLocation, Integer classVacancies, Date createTime, Date updateTime, Integer necessary) {
         this.classId = classId;
         this.className = className;
         this.classCredit = classCredit;
@@ -31,6 +33,7 @@ public class Classinfo {
         this.classVacancies = classVacancies;
         this.createTime = createTime;
         this.updateTime = updateTime;
+        this.necessary = necessary;
     }
 
     public Classinfo() {
@@ -107,5 +110,13 @@ public class Classinfo {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Integer getNecessary() {
+        return necessary;
+    }
+
+    public void setNecessary(Integer necessary) {
+        this.necessary = necessary;
     }
 }

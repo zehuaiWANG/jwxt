@@ -34,19 +34,4 @@ public class ClassinfoController {
         return list;
     }
 
-    @RequestMapping(value ="getpageclassinfo.do",method = RequestMethod.POST)
-    @ResponseBody
-    public List<Classinfo> getpageclassinfo(Integer page){
-        List<Classinfo> list = iClassinfoService.findClassinfoList();
-        List<Classinfo> list2 = new ArrayList<Classinfo>();
-        //list2.add(list.get(1));
-        if (list.size()<(page*15)){
-         for (int i = (page-1)*15;i<list.size()-(page-1)*15;i++)
-             list2.add(list.get(i));
-        }else{
-            for (int i = (page-1)*15;i<15*page;i++)
-                list2.add(list.get(i));
-        }
-        return list2;
-    }
 }
