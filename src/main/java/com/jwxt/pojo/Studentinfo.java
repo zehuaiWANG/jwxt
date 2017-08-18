@@ -15,6 +15,7 @@ public class Studentinfo {
 
     private Date updateTime;
 
+
     public Studentinfo(Integer studentId, String classId, String className, String classTime, Date createTime, Date updateTime) {
         this.studentId = studentId;
         this.classId = classId;

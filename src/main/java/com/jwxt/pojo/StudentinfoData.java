@@ -13,12 +13,14 @@ public class StudentinfoData {
 
     private String time;
 
+    private String classTime;
+
     private String location;
 
     private Integer class_time_num;
 
     public StudentinfoData(){}
-    public StudentinfoData(Integer studentId, String classId, String className, String week, String day, String time, String location,Integer class_time_num) {
+    public StudentinfoData(Integer studentId, String classId, String className, String week, String day, String time, String location,Integer class_time_num,String classTime) {
         this.studentId = studentId;
         this.classId = classId;
         this.className = className;
@@ -27,6 +29,7 @@ public class StudentinfoData {
         this.time = time;
         this.location = location;
         this.class_time_num = class_time_num;
+        this.classTime = classTime;
     }
 
     public Integer getStudentId() {
@@ -91,5 +94,13 @@ public class StudentinfoData {
 
     public void setClass_time_num(Integer class_time_num) {
         this.class_time_num = class_time_num;
+    }
+
+    public String getClassTime() {
+        return classTime;
+    }
+
+    public void setClassTime(String classTime) {
+        this.classTime = classTime;
     }
 }
