@@ -2,7 +2,7 @@ package com.jwxt.pojo;
 
 import java.util.Date;
 
-public class Classinfo {
+public class ClassinfoData {
     private String classId;
 
     private String className;
@@ -23,8 +23,9 @@ public class Classinfo {
 
     private Integer necessary;
 
+    private Integer conflit;
 
-    public Classinfo(String classId, String className, Integer classCredit, String classTutor, String classTime, String classLocation, Integer classVacancies, Date createTime, Date updateTime, Integer necessary) {
+    public ClassinfoData(String classId, String className, Integer classCredit, String classTutor, String classTime, String classLocation, Integer classVacancies, Date createTime, Date updateTime, Integer necessary,Integer conflit) {
         this.classId = classId;
         this.className = className;
         this.classCredit = classCredit;
@@ -35,9 +36,10 @@ public class Classinfo {
         this.createTime = createTime;
         this.updateTime = updateTime;
         this.necessary = necessary;
+        this.conflit = conflit;
     }
 
-    public Classinfo() {
+    public ClassinfoData() {
         super();
     }
 
@@ -119,5 +121,13 @@ public class Classinfo {
 
     public void setNecessary(Integer necessary) {
         this.necessary = necessary;
+    }
+
+    public Integer getConflit() {
+        return conflit;
+    }
+
+    public void setConflit(Integer conflit) {
+        this.conflit = conflit;
     }
 }

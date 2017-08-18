@@ -4,19 +4,22 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.jwxt.common.ServerResponse;
 import com.jwxt.pojo.Classinfo;
+import com.jwxt.pojo.ClassinfoData;
 import com.jwxt.pojo.Studentinfo;
 import com.jwxt.pojo.StudentinfoData;
 import com.jwxt.service.IClassinfoService;
 import com.jwxt.service.IStudentinfoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.servlet.http.HttpSession;
+import java.nio.file.attribute.UserDefinedFileAttributeView;
+import java.util.*;
 
 @Controller
 @RequestMapping("/student/")
@@ -29,6 +32,7 @@ public class StudentinfoController {
     @RequestMapping(value ="selectstuinfoByPrimaryKey.do",method = RequestMethod.POST)
     @ResponseBody
     public List<StudentinfoData> selectstuinfoByPrimaryKey(Integer studentid){
+        System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();
         List<Studentinfo> list1 =  iStudentinfoService.selectStudnetinfoByPrimaryKey(studentid);
         List<StudentinfoData> list2 = new ArrayList<>();
 
@@ -83,8 +87,10 @@ public class StudentinfoController {
 
     @RequestMapping(value ="insertstuinfo.do",method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<String> insert(Integer studentid, String classid, String classname,String classtime) {
-        return iStudentinfoService.insert(studentid,classid,classname,classtime);
+    public ServerResponse<PageInfo> insert(Integer studentid, String classid, String classname,String classtime,
+                                           @RequestParam(value = "pageNum",defaultValue="1") int pageNum,
+                                                @RequestParam(value = "pageSize",defaultValue = "10") int pageSize) {
+        return iStudentinfoService.insert(studentid,classid,classname,classtime,pageNum,pageSize);
     }
 
     @RequestMapping(value ="selectInfo.do",method = RequestMethod.POST)
@@ -98,8 +104,10 @@ public class StudentinfoController {
 
     @RequestMapping(value ="delstuinfo.do",method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<String> delstuinfo(Integer studentid,String classid){
-        return iStudentinfoService.delstuinfo(studentid,classid);
+    public ServerResponse<PageInfo> delstuinfo(Integer studentid,String classid,
+                                             @RequestParam(value = "pageNum",defaultValue="1") int pageNum,
+                                             @RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
+        return iStudentinfoService.delstuinfo(studentid,classid,pageNum,pageSize);
     }
 
     @RequestMapping(value ="getallclassinfoByPageHelper.do",method = RequestMethod.POST)
@@ -107,9 +115,25 @@ public class StudentinfoController {
     public PageInfo fo(Integer studentid, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
         PageHelper.startPage(pageNum,pageSize);
         List<Classinfo> list = iClassinfoService.findClassinfoList();
-        for (int i=0;i<list.size();i++)
-            list.get(i).setClassVacancies( new Integer(insertstuinfo(studentid,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
-        PageInfo pageResult = new PageInfo(list);
+        List<ClassinfoData>list2 = new ArrayList<ClassinfoData>();
+        for(int i = 0;i<list.size();i++){
+          ClassinfoData a = new ClassinfoData();
+            a.setClassName(list.get(i).getClassName());
+            a.setUpdateTime(list.get(i).getUpdateTime());
+            a.setCreateTime(list.get(i).getCreateTime());
+            a.setClassName(list.get(i).getClassName());
+            a.setClassId(list.get(i).getClassId());
+            a.setClassLocation(list.get(i).getClassLocation());
+            a.setClassCredit(list.get(i).getClassCredit());
+            a.setClassTutor(list.get(i).getClassTutor());
+            a.setClassVacancies(list.get(i).getClassVacancies());
+            a.setConflit(new Integer(insertstuinfo(studentid,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
+            a.setNecessary(list.get(i).getNecessary());
+            list2.add(a);
+        }
+        /*for (int i=0;i<list.size();i++)
+            list.get(i).setClassVacancies( new Integer(insertstuinfo(studentid,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));*/
+        PageInfo pageResult = new PageInfo(list2);
         return pageResult;
     }
 }

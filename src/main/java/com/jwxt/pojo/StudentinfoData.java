@@ -16,6 +16,7 @@ public class StudentinfoData {
     private String location;
 
     private Integer class_time_num;
+
     public StudentinfoData(){}
     public StudentinfoData(Integer studentId, String classId, String className, String week, String day, String time, String location,Integer class_time_num) {
         this.studentId = studentId;

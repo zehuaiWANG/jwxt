@@ -1,6 +1,8 @@
 package com.jwxt.service.impl;
 
+import com.github.pagehelper.PageInfo;
 import com.jwxt.common.ServerResponse;
+import com.jwxt.controller.protal.StudentinfoController;
 import com.jwxt.dao.LoginfoMapper;
 import com.jwxt.dao.StudentinfoMapper;
 import com.jwxt.pojo.Loginfo;
@@ -8,6 +10,7 @@ import com.jwxt.pojo.Studentinfo;
 import com.jwxt.service.IStudentinfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
 import java.util.List;
@@ -19,6 +22,9 @@ public class StudentinfoServiceImpl implements IStudentinfoService{
 
     @Autowired
     private LoginfoMapper loginfoMapper;
+
+    @Autowired
+     private StudentinfoController b;
     @Override
     public List<Studentinfo> selectStudnetinfoByPrimaryKey(Integer studentId) {
         List<Studentinfo> stu = studentinfoMapper.selectstuinfoByPrimaryKey(studentId);
@@ -46,7 +52,7 @@ public class StudentinfoServiceImpl implements IStudentinfoService{
         else return ServerResponse.createBySuccessMessage("课程不冲突");
     }
 
-    public ServerResponse<String> insert(Integer studentid, String classid,String classname, String classtime){
+    public ServerResponse<PageInfo> insert(Integer studentid, String classid,String classname, String classtime, int pageNum,int pageSize){
         Studentinfo studentinfodemo = new Studentinfo();
         studentinfodemo.setStudentId(studentid);
         studentinfodemo.setClassTime(classtime);
@@ -62,12 +68,13 @@ public class StudentinfoServiceImpl implements IStudentinfoService{
         if (insertstuinfo(studentid,classid,classtime).isSuccess()){
             loginfoMapper.insert(loginfo);
             studentinfoMapper.insert(studentinfodemo);
-            return ServerResponse.createBySuccessMessage("选课成功");
+           /* PageInfo a = new StudentinfoController().fo(studentid,pageNum,pageSize);*/
+            return ServerResponse.createBySuccess("选课成功", b.fo(studentid,pageNum,pageSize));
         }
         return ServerResponse.createBySuccessMessage("课程冲突");
     }
 
-    public ServerResponse<String> delstuinfo(Integer studentid, String classid){
+    public ServerResponse<PageInfo> delstuinfo(Integer studentid, String classid, int pageNum,int pageSize){
         int result = studentinfoMapper.delstuinfo(studentid,classid);
         Loginfo loginfo = new Loginfo();
         loginfo.setClassId(classid);
@@ -76,7 +83,7 @@ public class StudentinfoServiceImpl implements IStudentinfoService{
         loginfo.setUpdateTime(new Date());
         if (result>0){
             loginfoMapper.insert(loginfo);
-            return ServerResponse.createBySuccessMessage("退课成功");
+            return ServerResponse.createBySuccess("退课成功", b.fo(studentid,pageNum,pageSize));
         }
         return ServerResponse.createByErrorMessage("退课失败");
     }

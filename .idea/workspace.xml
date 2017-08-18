@@ -7,14 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe5431d7-1787-45f4-a5b4-4d6a67e4fe13" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jwxt/pojo/ClassinfoData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/ClassinfoController.java" afterPath="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/ClassinfoController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java" afterPath="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jwxt/pojo/Classinfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/jwxt/pojo/Classinfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jwxt/pojo/StudentinfoData.java" afterPath="$PROJECT_DIR$/src/main/java/com/jwxt/pojo/StudentinfoData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jwxt/service/IStudentinfoService.java" afterPath="$PROJECT_DIR$/src/main/java/com/jwxt/service/IStudentinfoService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/StudentinfoServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/StudentinfoServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/datasource.properties" afterPath="$PROJECT_DIR$/src/main/resources/datasource.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/ClassinfoMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/ClassinfoMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/datasource.properties" afterPath="$PROJECT_DIR$/target/classes/datasource.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/jwxt/WEB-INF/classes/datasource.properties" afterPath="$PROJECT_DIR$/target/jwxt/WEB-INF/classes/datasource.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,73 +29,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ClassinfoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/ClassinfoController.java">
+      <file leaf-file-name="StudentinfoController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="25" column="66" lean-forward="false" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="66" />
+            <state relative-caret-position="368">
+              <caret line="35" column="75" lean-forward="true" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IClassinfoService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/IClassinfoService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generatorConfig.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1587">
-              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="datasource.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="82" lean-forward="false" selection-start-line="0" selection-start-column="82" selection-end-line="0" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClassinfoMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/ClassinfoMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClassinfoMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ClassinfoMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="161" column="11" lean-forward="false" selection-start-line="161" selection-start-column="11" selection-end-line="161" selection-end-column="11" />
-              <folding>
-                <marker date="1502846032568" expanded="true" signature="1422:1543" ph="select from jwxt_classinfo" />
-                <marker date="1502846032568" expanded="true" signature="1629:1704" ph="delete from " />
-                <marker date="1502846032568" expanded="true" signature="1785:2323" ph="insert into jwxt_classinfo... " />
-                <marker date="1502846032568" expanded="true" signature="4301:5347" ph="update jwxt_... " />
-                <marker date="1502846032568" expanded="true" signature="5440:5992" ph="update jwxt_... " />
-                <marker date="1502846032568" expanded="true" signature="6070:6098" ph="SELECT * FRO... jwxt_classinfo" />
-                <marker date="1502846032568" expanded="true" signature="6168:6363" ph="SELECT * FRO... jwxt_classinfo" />
+                <element signature="e#6193#6208#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,20 +45,38 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/IStudentinfoService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
-              <caret line="11" column="73" lean-forward="false" selection-start-line="11" selection-start-column="73" selection-end-line="11" selection-end-column="73" />
+              <caret line="13" column="100" lean-forward="false" selection-start-line="13" selection-start-column="100" selection-end-line="13" selection-end-column="100" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentinfoController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java">
+      <file leaf-file-name="StudentinfoServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/StudentinfoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="762">
-              <caret line="56" column="70" lean-forward="false" selection-start-line="56" selection-start-column="70" selection-end-line="56" selection-end-column="70" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="203">
+              <caret line="76" column="101" lean-forward="false" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="107" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Loginfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/Loginfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassinfoController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/ClassinfoController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,8 +84,8 @@
       <file leaf-file-name="ClassinfoServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/ClassinfoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="45" />
+            <state relative-caret-position="216">
+              <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -134,16 +94,44 @@
       <file leaf-file-name="StudentinfoData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/StudentinfoData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="27" column="45" lean-forward="false" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+            <state relative-caret-position="161">
+              <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassinfoData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/ClassinfoData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
               <folding>
-                <element signature="e#1567#1568#0" expanded="true" />
-                <element signature="e#1599#1600#0" expanded="true" />
-                <element signature="e#1795#1796#0" expanded="true" />
-                <element signature="e#1832#1833#0" expanded="true" />
-                <element signature="e#1893#1894#0" expanded="true" />
-                <element signature="e#1945#1946#0" expanded="true" />
+                <element signature="e#3013#3014#0" expanded="true" />
+                <element signature="e#3043#3044#0" expanded="true" />
+                <element signature="e#3090#3091#0" expanded="true" />
+                <element signature="e#3128#3129#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Classinfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/Classinfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="943">
+              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginfoController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/LoginfoController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -193,10 +181,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/ClassinfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/Old_StudentinfoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/service/IStudentinfoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/dao/StudentinfoMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/StudentinfoMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/StudentinfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/service/ILoginfoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/dao/LoginfoMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/LoginfoMapper.xml" />
@@ -204,10 +190,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/LoginfoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/ClassinfoController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/datasource.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/dao/ClassinfoMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/ClassinfoMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/datasource.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/pojo/StudentinfoData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/pojo/Classinfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/pojo/ClassinfoData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/StudentinfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/service/IStudentinfoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java" />
       </list>
     </option>
@@ -248,10 +238,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="861" />
-    <option name="y" value="15" />
-    <option name="width" value="1763" />
-    <option name="height" value="1038" />
+    <option name="x" value="-50" />
+    <option name="y" value="59" />
+    <option name="width" value="1098" />
+    <option name="height" value="1036" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -329,15 +319,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jwxt" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jwxt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jwxt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jwxt" type="462c0819:PsiDirectoryNode" />
               <item name="pojo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -371,8 +352,15 @@
               <item name="jwxt" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mappers" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jwxt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jwxt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jwxt" type="b2602c69:ProjectViewProjectNode" />
@@ -383,38 +371,38 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/mmall" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.jwxt.controller.protal" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\jwxt\src\main\webapp\lib" />
-      <recent name="D:\jwxt\target" />
-      <recent name="D:\jwxt\src\main" />
-      <recent name="D:\jwxt\src\main\resources" />
-      <recent name="D:\jwxt\src\main\java\com\jwxt\common" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\jwxt\src\main\webapp" />
       <recent name="D:\jwxt\src\main\java\com\jwxt\controller\protal" />
       <recent name="D:\jwxt\src\main\webapp\WEB-INF" />
       <recent name="D:\jwxt\src\main\resources" />
       <recent name="D:\jwxt\src\main\java\com\jwxt\service\impl" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\jwxt\src\main\webapp\WEB-INF\lib" />
+      <recent name="D:\jwxt\src\main\webapp\lib" />
+      <recent name="D:\jwxt\target" />
+      <recent name="D:\jwxt\src\main" />
+      <recent name="D:\jwxt\src\main\resources" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.jwxt.controller.protal" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -626,12 +614,15 @@
       <workItem from="1502688677557" duration="297000" />
       <workItem from="1502700789874" duration="4316000" />
       <workItem from="1502816081263" duration="3949000" />
-      <workItem from="1502845885814" duration="1656000" />
+      <workItem from="1502845885814" duration="3170000" />
+      <workItem from="1502959177949" duration="599000" />
+      <workItem from="1503011677153" duration="7782000" />
+      <workItem from="1503034644234" duration="7430000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106807000" />
+    <option name="totallyTimeSpent" value="124132000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -647,9 +638,9 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2598684" sideWeight="0.2390625" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33936653" sideWeight="0.25804722" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21145834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.019313306" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -658,16 +649,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280543" sideWeight="0.49356222" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2598684" sideWeight="0.7609375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33936653" sideWeight="0.7419528" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30811402" sideWeight="0.46822917" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25364584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30656108" sideWeight="0.45922747" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2333691" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -692,12 +683,68 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/Old_StudentinfoController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/old_StudentinfoServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/ClassinfoServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="44" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/ClassinfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/LoginfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding>
+            <element signature="e#6193#6208#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/Studentinfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -706,235 +753,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mmall.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext-datasource.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="68" lean-forward="false" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/Classinfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="943">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mmall.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext-datasource.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="68" lean-forward="false" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/CrossOrigin.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/myreport.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7423">
-          <caret line="342" column="43" lean-forward="false" selection-start-line="342" selection-start-column="43" selection-end-line="342" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mmall.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/old_IStudentinfoService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/old_StudentinfoMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/old_StudentinfoMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/Old_StudentinfoController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/old_StudentinfoServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/ClassinfoData.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/common/ResponseCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding>
-            <element signature="e#363#364#0" expanded="false" />
-            <element signature="e#390#391#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/common/ServerResponse.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/StudentinfoData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/StudentinfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="75" column="11" lean-forward="false" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
-          <folding>
-            <marker date="1502635073767" expanded="true" signature="994:1325" ph="insert into jwxt_studentinfo... " />
-            <marker date="1502635073767" expanded="true" signature="2615:2698" ph="select from jwxt_studentinfo" />
-            <marker date="1502635073767" expanded="true" signature="2629:2698" ph="select from jwxt_studentinfo" />
-            <marker date="1502635073767" expanded="true" signature="2764:2892" ph="delete from " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/LoginfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="95" column="30" lean-forward="false" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
-          <folding>
-            <marker date="1502636500362" expanded="true" signature="902:1025" ph="select from jwxt_loginfo" />
-            <marker date="1502636500362" expanded="true" signature="1112:1189" ph="delete from " />
-            <marker date="1502636500362" expanded="true" signature="1268:1514" ph="insert into jwxt_loginfo... " />
-            <marker date="1502636500362" expanded="true" signature="2610:3078" ph="update jwxt_... " />
-            <marker date="1502636500362" expanded="true" signature="3169:3422" ph="update jwxt_... " />
-            <marker date="1502636500362" expanded="true" signature="3498:3524" ph="SELECT * FRO... jwxt_loginfo" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext-datasource.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="68" lean-forward="false" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="68" />
+          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/LoginfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="17" column="61" lean-forward="false" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/LoginfoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/ILoginfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/LoginfoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/Studentinfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+        <state relative-caret-position="161">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -947,18 +789,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/StudentinfoMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/ClassinfoData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding>
+            <element signature="e#3013#3014#0" expanded="true" />
+            <element signature="e#3043#3044#0" expanded="true" />
+            <element signature="e#3090#3091#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/ClassinfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/ClassinfoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="15" column="91" lean-forward="false" selection-start-line="15" selection-start-column="91" selection-end-line="15" selection-end-column="91" />
+          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/StudentinfoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="49" column="17" lean-forward="false" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+        <state relative-caret-position="203">
+          <caret line="76" column="101" lean-forward="false" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="107" />
           <folding />
         </state>
       </provider>
@@ -966,101 +829,17 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/IStudentinfoService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="11" column="73" lean-forward="false" selection-start-line="11" selection-start-column="73" selection-end-line="11" selection-end-column="73" />
+          <caret line="13" column="100" lean-forward="false" selection-start-line="13" selection-start-column="100" selection-end-line="13" selection-end-column="100" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/Classinfo.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/ClassinfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="25" column="66" lean-forward="false" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/ClassinfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/IClassinfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1587">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="82" lean-forward="false" selection-start-line="0" selection-start-column="82" selection-end-line="0" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ClassinfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="161" column="11" lean-forward="false" selection-start-line="161" selection-start-column="11" selection-end-line="161" selection-end-column="11" />
-          <folding>
-            <marker date="1502846032568" expanded="true" signature="1422:1543" ph="select from jwxt_classinfo" />
-            <marker date="1502846032568" expanded="true" signature="1629:1704" ph="delete from " />
-            <marker date="1502846032568" expanded="true" signature="1785:2323" ph="insert into jwxt_classinfo... " />
-            <marker date="1502846032568" expanded="true" signature="4301:5347" ph="update jwxt_... " />
-            <marker date="1502846032568" expanded="true" signature="5440:5992" ph="update jwxt_... " />
-            <marker date="1502846032568" expanded="true" signature="6070:6098" ph="SELECT * FRO... jwxt_classinfo" />
-            <marker date="1502846032568" expanded="true" signature="6168:6363" ph="SELECT * FRO... jwxt_classinfo" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/ClassinfoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/StudentinfoData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="27" column="45" lean-forward="false" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
-          <folding>
-            <element signature="e#1567#1568#0" expanded="true" />
-            <element signature="e#1599#1600#0" expanded="true" />
-            <element signature="e#1795#1796#0" expanded="true" />
-            <element signature="e#1832#1833#0" expanded="true" />
-            <element signature="e#1893#1894#0" expanded="true" />
-            <element signature="e#1945#1946#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="56" column="70" lean-forward="false" selection-start-line="56" selection-start-column="70" selection-end-line="56" selection-end-column="70" />
+        <state relative-caret-position="368">
+          <caret line="35" column="75" lean-forward="true" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#6193#6208#0" expanded="true" />
           </folding>
         </state>
       </provider>
