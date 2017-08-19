@@ -17,5 +17,5 @@ public interface LoginfoMapper {
 
     int updateByPrimaryKey(Loginfo record);
 
-    List<Loginfo> selectAllLogInfo();
+    List<Loginfo> selectAllLogInfo(Integer studentid);
 }

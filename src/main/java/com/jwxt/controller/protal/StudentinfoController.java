@@ -10,15 +10,11 @@ import com.jwxt.pojo.StudentinfoData;
 import com.jwxt.service.IClassinfoService;
 import com.jwxt.service.IStudentinfoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.servlet.http.HttpSession;
-import java.nio.file.attribute.UserDefinedFileAttributeView;
 import java.util.*;
 
 @Controller
@@ -32,7 +28,9 @@ public class StudentinfoController {
     @RequestMapping(value ="selectstuinfoByPrimaryKey.do",method = RequestMethod.POST)
     @ResponseBody
     public List<StudentinfoData> selectstuinfoByPrimaryKey(Integer studentid){
-        System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();
+        //String username = request.getAttribute("credentials").toString();
+        //String username = request.getRemoteUser();
+       // System.out.println(username);System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();
         List<Studentinfo> list1 =  iStudentinfoService.selectStudnetinfoByPrimaryKey(studentid);
         List<StudentinfoData> list2 = new ArrayList<>();
 
@@ -113,6 +111,8 @@ public class StudentinfoController {
     @RequestMapping(value ="getallclassinfoByPageHelper.do",method = RequestMethod.POST)
     @ResponseBody
     public PageInfo fo(Integer studentid, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
+        List<Classinfo> list3 = iClassinfoService.findClassinfoList();
+        int size3 = list3.size();
         PageHelper.startPage(pageNum,pageSize);
         List<Classinfo> list = iClassinfoService.findClassinfoList();
         List<ClassinfoData>list2 = new ArrayList<ClassinfoData>();
@@ -135,6 +135,16 @@ public class StudentinfoController {
         /*for (int i=0;i<list.size();i++)
             list.get(i).setClassVacancies( new Integer(insertstuinfo(studentid,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));*/
         PageInfo pageResult = new PageInfo(list2);
+        //这个算法可牛逼了
+        pageResult.setSize((size3+pageSize-1)/pageSize);
+        pageResult.setPageSize(pageSize);
+        pageResult.setPrePage(pageNum-1);
+        pageResult.setNextPage(pageNum+1);
+        pageResult.setLastPage(pageResult.getSize());
+        pageResult.setIsFirstPage(pageNum == 1);
+        pageResult.setIsLastPage(pageNum == pageResult.getSize());
+        pageResult.setHasNextPage(pageNum != pageResult.getSize());
+        pageResult.setHasPreviousPage(pageNum != 1);
         return pageResult;
     }
 }

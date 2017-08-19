@@ -94,5 +94,6 @@
   </update>
   <select id="selectAllLogInfo" resultMap="BaseResultMap">
     SELECT * FROM jwxt_loginfo
+      where student_id = #{studentid,jdbcType=INTEGER}
   </select>
 </mapper>

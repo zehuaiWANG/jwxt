@@ -14,8 +14,8 @@ public class LoginfoServiceImpl implements ILoginfoService{
     @Autowired
     private LoginfoMapper loginfoMapper;
     @Override
-    public List<Loginfo> findLoginfoList() {
-        List<Loginfo>list = loginfoMapper.selectAllLogInfo();
+    public List<Loginfo> findLoginfoList(Integer studentid) {
+        List<Loginfo>list = loginfoMapper.selectAllLogInfo(studentid);
         return list;
     }
 }
