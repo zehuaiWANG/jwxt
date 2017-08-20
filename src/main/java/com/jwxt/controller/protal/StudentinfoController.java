@@ -10,11 +10,15 @@ import com.jwxt.pojo.StudentinfoData;
 import com.jwxt.service.IClassinfoService;
 import com.jwxt.service.IStudentinfoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.*;
 
 @Controller
@@ -30,7 +34,8 @@ public class StudentinfoController {
     public List<StudentinfoData> selectstuinfoByPrimaryKey(Integer studentid){
         //String username = request.getAttribute("credentials").toString();
         //String username = request.getRemoteUser();
-       // System.out.println(username);System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();
+        //String username =session.getId();
+       //System.out.println(username);System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();
         List<Studentinfo> list1 =  iStudentinfoService.selectStudnetinfoByPrimaryKey(studentid);
         List<StudentinfoData> list2 = new ArrayList<>();
 
@@ -43,6 +48,25 @@ public class StudentinfoController {
               data.setClassName(list1.get(i).getClassName());
                data.setWeek(str[j].split("_")[0]);
                data.setDay(str[j].split("_")[1]);
+               switch (str[j].split("_")[1]){
+                   case "Mon":data.setClassTime("1");break;
+                   case "Tues":data.setClassTime("2");break;
+                   case "Wed":data.setClassTime("3");break;
+                   case "Thur":data.setClassTime("4");break;
+                   case "Fri":data.setClassTime("5");break;
+                   case "Sat":data.setClassTime("6");break;
+                   case "Sun":data.setClassTime("7");break;
+                   case "Monday":data.setClassTime("1");break;
+                   case "Tuesday":data.setClassTime("2");break;
+                   case "Wednesday":data.setClassTime("3");break;
+                   case "Thursday":data.setClassTime("4");break;
+                   case "Friday":data.setClassTime("5");break;
+                   case "Saturday":data.setClassTime("6");break;
+                   case "Sunday":data.setClassTime("7");break;
+                   case "Tue":data.setClassTime("2");break;
+                   case "Thu":data.setClassTime("4");break;
+                   default:data.setClassTime("0");break;
+               }
                data.setTime(str[j].split("_")[2]);
                switch (str[j].split("_")[2]){
                    case "8:00-9:50":data.setClass_time_num(1);break;
