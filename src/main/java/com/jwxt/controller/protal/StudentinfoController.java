@@ -161,6 +161,7 @@ public class StudentinfoController {
         PageInfo pageResult = new PageInfo(list2);
         //这个算法可牛逼了
         pageResult.setSize((size3+pageSize-1)/pageSize);
+        pageResult.setPageNum(pageNum);
         pageResult.setPageSize(pageSize);
         pageResult.setPrePage(pageNum-1);
         pageResult.setNextPage(pageNum+1);
