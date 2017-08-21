@@ -72,7 +72,7 @@ public class StudentinfoServiceImpl implements IStudentinfoService{
             loginfoMapper.insert(loginfo);
             studentinfoMapper.insert(studentinfodemo);
            /* PageInfo a = new StudentinfoController().fo(studentid,pageNum,pageSize);*/
-            return ServerResponse.createBySuccess("选课成功", b.fo(session,pageNum,pageSize));
+            return ServerResponse.createBySuccess("选课成功", b.fo(session,pageNum,pageSize).getData());
         }
         return ServerResponse.createBySuccessMessage("课程冲突");
     }
@@ -88,7 +88,7 @@ public class StudentinfoServiceImpl implements IStudentinfoService{
         loginfo.setUpdateTime(new Date());
         if (result>0){
             loginfoMapper.insert(loginfo);
-            return ServerResponse.createBySuccess("退课成功", b.fo(session,pageNum,pageSize));
+            return ServerResponse.createBySuccess("退课成功", b.fo(session,pageNum,pageSize).getData());
         }
         return ServerResponse.createByErrorMessage("退课失败");
     }

@@ -3,6 +3,7 @@ package com.jwxt.controller.protal;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.jwxt.common.ConnectionCAS;
+import com.jwxt.common.ResponseCode;
 import com.jwxt.common.ServerResponse;
 import com.jwxt.pojo.Classinfo;
 import com.jwxt.pojo.ClassinfoData;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
@@ -40,7 +40,10 @@ public class StudentinfoController {
 
     @RequestMapping(value ="selectstuinfoByPrimaryKey.do",method = RequestMethod.POST)
     @ResponseBody
-    public List<StudentinfoData> selectstuinfoByPrimaryKey(HttpSession session){
+    public ServerResponse<List<StudentinfoData>> selectstuinfoByPrimaryKey(HttpSession session){
+        if (session.getAttribute("username") == null){
+            return ServerResponse.createErrorCodeMessage(ResponseCode.NEED_LOOGIN.getCode(),"用户未登录,请登录管理员");
+        }
         String username = session.getAttribute("username").toString();
         Integer studentid = Integer.parseInt(username);
         List<Studentinfo> list1 =  iStudentinfoService.selectStudnetinfoByPrimaryKey(studentid);
@@ -96,12 +99,15 @@ public class StudentinfoController {
                list2.add(data);
            }
        }
-        return list2;
+        return ServerResponse.createBySuccess("登录成功",list2);
     }
 
     @RequestMapping(value ="insert.do",method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<String> insertstuinfo(HttpSession session, String classid, String classtime) {
+        if (session.getAttribute("username") == null){
+            return ServerResponse.createErrorCodeMessage(ResponseCode.NEED_LOOGIN.getCode(),"用户未登录,请登录管理员");
+        }
         String username = session.getAttribute("username").toString();
         Integer studentid = Integer.parseInt(username);
         return iStudentinfoService.insertstuinfo(studentid,classid,classtime);
@@ -109,13 +115,16 @@ public class StudentinfoController {
 
     @RequestMapping(value ="getallclassinfo.do",method = RequestMethod.POST)
     @ResponseBody
-    public List<Classinfo> getallclassinfo(HttpSession session){
+    public ServerResponse<List<Classinfo>> getallclassinfo(HttpSession session){
+        if (session.getAttribute("username") == null){
+            return ServerResponse.createErrorCodeMessage(ResponseCode.NEED_LOOGIN.getCode(),"用户未登录,请登录管理员");
+        }
         String username = session.getAttribute("username").toString();
         Integer studentid = Integer.parseInt(username);
         List<Classinfo> list = iClassinfoService.findClassinfoList();
         for (int i=0;i<list.size();i++)
         list.get(i).setClassVacancies( new Integer(insertstuinfo(session,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
-        return list;
+        return ServerResponse.createBySuccess(list);
     }
 
     @RequestMapping(value ="insertstuinfo.do",method = RequestMethod.POST)
@@ -123,6 +132,9 @@ public class StudentinfoController {
     public ServerResponse<PageInfo> insert(HttpSession session, String classid, String classname,String classtime,
                                            @RequestParam(value = "pageNum",defaultValue="1") int pageNum,
                                                 @RequestParam(value = "pageSize",defaultValue = "10") int pageSize) {
+        if (session.getAttribute("username") == null){
+            return ServerResponse.createErrorCodeMessage(ResponseCode.NEED_LOOGIN.getCode(),"用户未登录,请登录管理员");
+        }
         String username = session.getAttribute("username").toString();
         Integer studentid = Integer.parseInt(username);
         return iStudentinfoService.insert(session,classid,classname,classtime,pageNum,pageSize);
@@ -130,11 +142,14 @@ public class StudentinfoController {
 
     @RequestMapping(value ="selectInfo.do",method = RequestMethod.POST)
     @ResponseBody
-    public List<Classinfo> selectInfo(HttpSession session,String info){
+    public ServerResponse<List<Classinfo>> selectInfo(HttpSession session,String info){
+        if (session.getAttribute("username") == null){
+            return ServerResponse.createErrorCodeMessage(ResponseCode.NEED_LOOGIN.getCode(),"用户未登录,请登录管理员");
+        }
         List<Classinfo> list = iClassinfoService.selectInfo(info);
         for (int i=0;i<list.size();i++)
             list.get(i).setClassVacancies( new Integer(insertstuinfo(session,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
-        return list;
+        return ServerResponse.createBySuccess(list);
     }
 
     @RequestMapping(value ="delstuinfo.do",method = RequestMethod.POST)
@@ -142,6 +157,9 @@ public class StudentinfoController {
     public ServerResponse<PageInfo> delstuinfo(HttpSession session,String classid,
                                              @RequestParam(value = "pageNum",defaultValue="1") int pageNum,
                                              @RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
+        if (session.getAttribute("username") == null){
+            return ServerResponse.createErrorCodeMessage(ResponseCode.NEED_LOOGIN.getCode(),"用户未登录,请登录管理员");
+        }
         String username = session.getAttribute("username").toString();
         Integer studentid = Integer.parseInt(username);
         return iStudentinfoService.delstuinfo(session,classid,pageNum,pageSize);
@@ -149,7 +167,10 @@ public class StudentinfoController {
 
     @RequestMapping(value ="getallclassinfoByPageHelper.do",method = RequestMethod.POST)
     @ResponseBody
-    public PageInfo fo(HttpSession session, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
+    public ServerResponse<PageInfo> fo(HttpSession session, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
+        if (session.getAttribute("username") == null){
+            return ServerResponse.createErrorCodeMessage(ResponseCode.NEED_LOOGIN.getCode(),"用户未登录,请登录管理员");
+        }
         String username = session.getAttribute("username").toString();
         Integer studentid = Integer.parseInt(username);
         List<Classinfo> list3 = iClassinfoService.findClassinfoList();
@@ -185,6 +206,6 @@ public class StudentinfoController {
         pageResult.setIsLastPage(pageNum == pageResult.getSize());
         pageResult.setHasNextPage(pageNum != pageResult.getSize());
         pageResult.setHasPreviousPage(pageNum != 1);
-        return pageResult;
+        return ServerResponse.createBySuccess(pageResult);
     }
 }
