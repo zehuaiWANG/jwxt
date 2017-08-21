@@ -1,7 +1,13 @@
-import java.io.*;
+package com.jwxt.common;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
-public class test {
+
+public class ConnectionCAS {
     public static String sendPost(String url, String param) {
         PrintWriter out = null;
         BufferedReader in = null;
@@ -46,19 +52,11 @@ public class test {
 
 
     public static boolean getConnection(String username,String password){
-        String sr=test.sendPost("http://gpa.sustc.edu.cn/queryscorebyitem", "username="+username+"&password="+password);
+        String sr=ConnectionCAS.sendPost("http://gpa.sustc.edu.cn/queryscorebyitem", "username="+username+"&password="+password);
         if (sr.contains("\"status\":1000")){
             return true;
         }else {
             return false;
-        }
-    }
-
-    public static void main(String[] args) {
-        //String sr=test.sendPost("http://gpa.sustc.edu.cn/queryscorebyitem", "username=1151093&password=101871");
-       // System.out.println(sr);
-        if (getConnection("11510693","101871")){
-            System.out.println("成功");
         }
     }
 }

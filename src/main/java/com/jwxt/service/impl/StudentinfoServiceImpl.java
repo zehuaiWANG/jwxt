@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
 
@@ -52,7 +53,9 @@ public class StudentinfoServiceImpl implements IStudentinfoService{
         else return ServerResponse.createBySuccessMessage("课程不冲突");
     }
 
-    public ServerResponse<PageInfo> insert(Integer studentid, String classid,String classname, String classtime, int pageNum,int pageSize){
+    public ServerResponse<PageInfo> insert(HttpSession session, String classid, String classname, String classtime, int pageNum, int pageSize){
+        String username = session.getAttribute("username").toString();
+        Integer studentid = Integer.parseInt(username);
         Studentinfo studentinfodemo = new Studentinfo();
         studentinfodemo.setStudentId(studentid);
         studentinfodemo.setClassTime(classtime);
@@ -69,12 +72,14 @@ public class StudentinfoServiceImpl implements IStudentinfoService{
             loginfoMapper.insert(loginfo);
             studentinfoMapper.insert(studentinfodemo);
            /* PageInfo a = new StudentinfoController().fo(studentid,pageNum,pageSize);*/
-            return ServerResponse.createBySuccess("选课成功", b.fo(studentid,pageNum,pageSize));
+            return ServerResponse.createBySuccess("选课成功", b.fo(session,pageNum,pageSize));
         }
         return ServerResponse.createBySuccessMessage("课程冲突");
     }
 
-    public ServerResponse<PageInfo> delstuinfo(Integer studentid, String classid, int pageNum,int pageSize){
+    public ServerResponse<PageInfo> delstuinfo(HttpSession session, String classid, int pageNum,int pageSize){
+        String username = session.getAttribute("username").toString();
+        Integer studentid = Integer.parseInt(username);
         int result = studentinfoMapper.delstuinfo(studentid,classid);
         Loginfo loginfo = new Loginfo();
         loginfo.setClassId(classid);
@@ -83,7 +88,7 @@ public class StudentinfoServiceImpl implements IStudentinfoService{
         loginfo.setUpdateTime(new Date());
         if (result>0){
             loginfoMapper.insert(loginfo);
-            return ServerResponse.createBySuccess("退课成功", b.fo(studentid,pageNum,pageSize));
+            return ServerResponse.createBySuccess("退课成功", b.fo(session,pageNum,pageSize));
         }
         return ServerResponse.createByErrorMessage("退课失败");
     }

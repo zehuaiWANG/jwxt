@@ -2,6 +2,7 @@ package com.jwxt.controller.protal;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.jwxt.common.ConnectionCAS;
 import com.jwxt.common.ServerResponse;
 import com.jwxt.pojo.Classinfo;
 import com.jwxt.pojo.ClassinfoData;
@@ -10,14 +11,12 @@ import com.jwxt.pojo.StudentinfoData;
 import com.jwxt.service.IClassinfoService;
 import com.jwxt.service.IStudentinfoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
@@ -26,16 +25,24 @@ import java.util.*;
 public class StudentinfoController {
     @Autowired
     private IStudentinfoService iStudentinfoService;
-
     @Autowired
     private IClassinfoService iClassinfoService;
+    @RequestMapping(value="login.do",method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<String> login(String username, String password, HttpSession session){
+        if (ConnectionCAS.getConnection(username,password)){
+            session.setAttribute("username",username);
+            return ServerResponse.createBySuccess("登录成功");
+        }else {
+            return  ServerResponse.createByErrorMessage("登陆失败");
+        }
+    }
+
     @RequestMapping(value ="selectstuinfoByPrimaryKey.do",method = RequestMethod.POST)
     @ResponseBody
-    public List<StudentinfoData> selectstuinfoByPrimaryKey(Integer studentid){
-        //String username = request.getAttribute("credentials").toString();
-        //String username = request.getRemoteUser();
-        //String username =session.getId();
-       //System.out.println(username);System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();
+    public List<StudentinfoData> selectstuinfoByPrimaryKey(HttpSession session){
+        String username = session.getAttribute("username").toString();
+        Integer studentid = Integer.parseInt(username);
         List<Studentinfo> list1 =  iStudentinfoService.selectStudnetinfoByPrimaryKey(studentid);
         List<StudentinfoData> list2 = new ArrayList<>();
 
@@ -94,47 +101,57 @@ public class StudentinfoController {
 
     @RequestMapping(value ="insert.do",method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<String> insertstuinfo(Integer studentid, String classid, String classtime) {
+    public ServerResponse<String> insertstuinfo(HttpSession session, String classid, String classtime) {
+        String username = session.getAttribute("username").toString();
+        Integer studentid = Integer.parseInt(username);
         return iStudentinfoService.insertstuinfo(studentid,classid,classtime);
     }
 
     @RequestMapping(value ="getallclassinfo.do",method = RequestMethod.POST)
     @ResponseBody
-    public List<Classinfo> getallclassinfo(Integer studentid){
+    public List<Classinfo> getallclassinfo(HttpSession session){
+        String username = session.getAttribute("username").toString();
+        Integer studentid = Integer.parseInt(username);
         List<Classinfo> list = iClassinfoService.findClassinfoList();
         for (int i=0;i<list.size();i++)
-        list.get(i).setClassVacancies( new Integer(insertstuinfo(studentid,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
+        list.get(i).setClassVacancies( new Integer(insertstuinfo(session,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
         return list;
     }
 
     @RequestMapping(value ="insertstuinfo.do",method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<PageInfo> insert(Integer studentid, String classid, String classname,String classtime,
+    public ServerResponse<PageInfo> insert(HttpSession session, String classid, String classname,String classtime,
                                            @RequestParam(value = "pageNum",defaultValue="1") int pageNum,
                                                 @RequestParam(value = "pageSize",defaultValue = "10") int pageSize) {
-        return iStudentinfoService.insert(studentid,classid,classname,classtime,pageNum,pageSize);
+        String username = session.getAttribute("username").toString();
+        Integer studentid = Integer.parseInt(username);
+        return iStudentinfoService.insert(session,classid,classname,classtime,pageNum,pageSize);
     }
 
     @RequestMapping(value ="selectInfo.do",method = RequestMethod.POST)
     @ResponseBody
-    public List<Classinfo> selectInfo(Integer studentid,String info){
+    public List<Classinfo> selectInfo(HttpSession session,String info){
         List<Classinfo> list = iClassinfoService.selectInfo(info);
         for (int i=0;i<list.size();i++)
-            list.get(i).setClassVacancies( new Integer(insertstuinfo(studentid,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
+            list.get(i).setClassVacancies( new Integer(insertstuinfo(session,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
         return list;
     }
 
     @RequestMapping(value ="delstuinfo.do",method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<PageInfo> delstuinfo(Integer studentid,String classid,
+    public ServerResponse<PageInfo> delstuinfo(HttpSession session,String classid,
                                              @RequestParam(value = "pageNum",defaultValue="1") int pageNum,
                                              @RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
-        return iStudentinfoService.delstuinfo(studentid,classid,pageNum,pageSize);
+        String username = session.getAttribute("username").toString();
+        Integer studentid = Integer.parseInt(username);
+        return iStudentinfoService.delstuinfo(session,classid,pageNum,pageSize);
     }
 
     @RequestMapping(value ="getallclassinfoByPageHelper.do",method = RequestMethod.POST)
     @ResponseBody
-    public PageInfo fo(Integer studentid, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
+    public PageInfo fo(HttpSession session, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
+        String username = session.getAttribute("username").toString();
+        Integer studentid = Integer.parseInt(username);
         List<Classinfo> list3 = iClassinfoService.findClassinfoList();
         int size3 = list3.size();
         PageHelper.startPage(pageNum,pageSize);
@@ -152,12 +169,10 @@ public class StudentinfoController {
             a.setClassTutor(list.get(i).getClassTutor());
             a.setClassTime(list.get(i).getClassTime());
             a.setClassVacancies(list.get(i).getClassVacancies());
-            a.setConflit(new Integer(insertstuinfo(studentid,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
+            a.setConflit(new Integer(insertstuinfo(session,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
             a.setNecessary(list.get(i).getNecessary());
             list2.add(a);
         }
-        /*for (int i=0;i<list.size();i++)
-            list.get(i).setClassVacancies( new Integer(insertstuinfo(studentid,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));*/
         PageInfo pageResult = new PageInfo(list2);
         //这个算法可牛逼了
         pageResult.setSize((size3+pageSize-1)/pageSize);

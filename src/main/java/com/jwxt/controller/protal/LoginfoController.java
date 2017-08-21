@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,9 @@ public class LoginfoController {
     private ILoginfoService iLoginfoService;
     @RequestMapping(value ="getallLoginfo.do",method = RequestMethod.POST)
     @ResponseBody
-    public List<LoginfoVo> getallLoginfo(Integer studentid){
+    public List<LoginfoVo> getallLoginfo(HttpSession session){
+        String username = session.getAttribute("username").toString();
+        Integer studentid = Integer.parseInt(username);
         List<Loginfo> list = iLoginfoService.findLoginfoList(studentid);
         List<LoginfoVo> list2 = new ArrayList<LoginfoVo>();
         LoginfoVo loginfoVo = new LoginfoVo();
