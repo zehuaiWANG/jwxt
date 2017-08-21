@@ -29,8 +29,8 @@ public class LoginfoController {
         Integer studentid = Integer.parseInt(username);
         List<Loginfo> list = iLoginfoService.findLoginfoList(studentid);
         List<LoginfoVo> list2 = new ArrayList<LoginfoVo>();
-        LoginfoVo loginfoVo = new LoginfoVo();
         for (Loginfo loginfoItem : list){
+            LoginfoVo loginfoVo = new LoginfoVo();
             loginfoVo.setClassId(loginfoItem.getClassId());
             loginfoVo.setOperate(loginfoItem.getOperate());
             loginfoVo.setStudentId(loginfoItem.getStudentId());

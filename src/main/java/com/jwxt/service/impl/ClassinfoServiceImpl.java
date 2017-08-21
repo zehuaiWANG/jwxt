@@ -30,5 +30,13 @@ public class ClassinfoServiceImpl implements IClassinfoService{
         return list;
     }
 
-
+    @Override
+    public boolean checkClassinfo(String classid, String classname,String classtime){
+        int count = classinfoMapper.selectByClassidAndClassnameAndClasstime(classid,classname,classtime);
+        if (count > 0){
+            return true;
+        }else {
+            return false;
+        }
+    }
 }

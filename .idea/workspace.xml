@@ -8,8 +8,14 @@
   <component name="ChangeListManager">
     <list default="true" id="fe5431d7-1787-45f4-a5b4-4d6a67e4fe13" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/LoginfoController.java" afterPath="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/LoginfoController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java" afterPath="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/StudentinfoServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/StudentinfoServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jwxt/dao/ClassinfoMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/jwxt/dao/ClassinfoMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jwxt/service/IClassinfoService.java" afterPath="$PROJECT_DIR$/src/main/java/com/jwxt/service/IClassinfoService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/ClassinfoServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/ClassinfoServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/ClassinfoMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/ClassinfoMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mappers/ClassinfoMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mappers/ClassinfoMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/jwxt/WEB-INF/classes/mappers/ClassinfoMapper.xml" afterPath="$PROJECT_DIR$/target/jwxt/WEB-INF/classes/mappers/ClassinfoMapper.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,31 +45,84 @@
       <file leaf-file-name="StudentinfoController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2093">
-              <caret line="109" column="9" lean-forward="false" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+            <state relative-caret-position="292">
+              <caret line="213" column="0" lean-forward="true" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
               <folding>
-                <element signature="e#9679#9694#0" expanded="true" />
+                <element signature="e#9762#9777#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentinfoMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/StudentinfoMapper.java">
+      <file leaf-file-name="LoginfoMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/LoginfoMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state relative-caret-position="391">
+              <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClassinfoMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/ClassinfoMapper.java">
+      <file leaf-file-name="LoginfoMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/LoginfoMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="21" column="44" lean-forward="true" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+            <state relative-caret-position="449">
+              <caret line="94" column="2" lean-forward="false" selection-start-line="94" selection-start-column="2" selection-end-line="94" selection-end-column="2" />
+              <folding>
+                <marker date="1503061043862" expanded="true" signature="902:1025" ph="select from jwxt_loginfo" />
+                <marker date="1503061043862" expanded="true" signature="1112:1189" ph="delete from " />
+                <marker date="1503061043862" expanded="true" signature="1268:1514" ph="insert into jwxt_loginfo... " />
+                <marker date="1503061043862" expanded="true" signature="2610:3078" ph="update jwxt_... " />
+                <marker date="1503061043862" expanded="true" signature="3169:3422" ph="update jwxt_... " />
+                <marker date="1503061043862" expanded="true" signature="3498:3579" ph="SELECT * FRO... jwxt_loginfo" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentinfoData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/StudentinfoData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#2148#2149#0" expanded="true" />
+                <element signature="e#2190#2191#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginfoController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/LoginfoController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="667">
+              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ILoginfoService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/ILoginfoService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginfoVo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/vo/LoginfoVo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="41" column="16" lean-forward="false" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+              <folding>
+                <element signature="e#860#861#0" expanded="true" />
+                <element signature="e#898#899#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,71 +130,38 @@
       <file leaf-file-name="LoginfoServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/LoginfoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="253">
+              <caret line="17" column="48" lean-forward="false" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentinfoServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StudentinfoServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/StudentinfoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="90" column="98" lean-forward="false" selection-start-line="90" selection-start-column="98" selection-end-line="90" selection-end-column="98" />
+            <state relative-caret-position="50">
+              <caret line="35" column="81" lean-forward="false" selection-start-line="35" selection-start-column="74" selection-end-line="35" selection-end-column="81" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Const.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/common/Const.java">
+      <file leaf-file-name="ClassinfoMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ClassinfoMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResponseCode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/common/ResponseCode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnectionCAS.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/common/ConnectionCAS.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+            <state relative-caret-position="311">
+              <caret line="165" column="6" lean-forward="false" selection-start-line="165" selection-start-column="6" selection-end-line="165" selection-end-column="6" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1503302012489" expanded="true" signature="1422:1543" ph="select from jwxt_classinfo" />
+                <marker date="1503302012489" expanded="true" signature="1629:1704" ph="delete from " />
+                <marker date="1503302012489" expanded="true" signature="1785:2323" ph="insert into jwxt_classinfo... " />
+                <marker date="1503302012489" expanded="true" signature="4301:5347" ph="update jwxt_... " />
+                <marker date="1503302012489" expanded="true" signature="5440:5992" ph="update jwxt_... " />
+                <marker date="1503302012489" expanded="true" signature="6070:6098" ph="SELECT * FRO... jwxt_classinfo" />
+                <marker date="1503302012489" expanded="true" signature="6168:6363" ph="SELECT * FRO... jwxt_classinfo" />
+                <marker date="1503302012489" expanded="true" signature="6475:6620" ph="select count... jwxt_classinfo" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginfoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/LoginfoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClassinfoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/ClassinfoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -161,8 +187,10 @@
       <find>cas</find>
       <find>fo</find>
       <find>insert</find>
-      <find>fo(</find>
       <find>insert(</find>
+      <find>iclassinfoService</find>
+      <find>fo(</find>
+      <find>s</find>
     </findStrings>
     <dirStrings>
       <dir>D:\jwxt\src\main\webapp\WEB-INF</dir>
@@ -181,20 +209,16 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/service/IStudentinfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/common/Const.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/service/IClassinfoService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/CrossOrigin.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/myreport.html" />
         <option value="$PROJECT_DIR$/target/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/ClassinfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/Old_StudentinfoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/dao/StudentinfoMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/StudentinfoMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/ClassinfoController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/dao/ClassinfoMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappers/ClassinfoMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/datasource.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/pojo/Classinfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/pojo/ClassinfoData.java" />
@@ -214,9 +238,13 @@
         <option value="$PROJECT_DIR$/src/main/test/test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/common/ConnectionCAS.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/service/IStudentinfoService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/LoginfoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/StudentinfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/ClassinfoMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/ClassinfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/service/IClassinfoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/dao/ClassinfoMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/LoginfoController.java" />
       </list>
     </option>
   </component>
@@ -355,6 +383,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jwxt" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jwxt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jwxt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jwxt" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -366,6 +403,15 @@
               <item name="jwxt" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jwxt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jwxt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jwxt" type="462c0819:PsiDirectoryNode" />
+              <item name="vo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jwxt" type="b2602c69:ProjectViewProjectNode" />
@@ -664,12 +710,12 @@
       <workItem from="1503190473488" duration="293000" />
       <workItem from="1503190813336" duration="2549000" />
       <workItem from="1503233366843" duration="2405000" />
-      <workItem from="1503288056669" duration="5827000" />
+      <workItem from="1503288056669" duration="15443000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158662000" />
+    <option name="totallyTimeSpent" value="168278000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -682,7 +728,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2081448" sideWeight="0.28701717" order="7" side_tool="true" content_ui="tabs" />
@@ -702,10 +747,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30995476" sideWeight="0.71298283" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26244345" sideWeight="0.71298283" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.45064378" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2167382" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.45064378" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18669528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -734,21 +779,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/ClassinfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/StudentinfoData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1058">
@@ -762,7 +792,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#9679#9694#0" expanded="true" />
+            <element signature="e#9762#9777#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -868,7 +898,7 @@
         <state relative-caret-position="345">
           <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
           <folding>
-            <element signature="e#9679#9694#0" expanded="true" />
+            <element signature="e#9762#9777#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -887,13 +917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/IClassinfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/Classinfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="943">
@@ -908,13 +931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/ClassinfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/Studentinfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -922,48 +938,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/StudentinfoData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/cas-client.properties" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext-cas.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/ILoginfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/4.1.0/pagehelper-4.1.0.jar!/com/github/pagehelper/PageHelper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
           <caret line="45" column="65" lean-forward="false" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/LoginfoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/LoginfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2208">
-          <caret line="96" column="34" lean-forward="false" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
-          <folding>
-            <marker date="1503061043862" expanded="true" signature="902:1025" ph="select from jwxt_loginfo" />
-            <marker date="1503061043862" expanded="true" signature="1112:1189" ph="delete from " />
-            <marker date="1503061043862" expanded="true" signature="1268:1514" ph="insert into jwxt_loginfo... " />
-            <marker date="1503061043862" expanded="true" signature="2610:3078" ph="update jwxt_... " />
-            <marker date="1503061043862" expanded="true" signature="3169:3422" ph="update jwxt_... " />
-            <marker date="1503061043862" expanded="true" signature="3498:3579" ph="SELECT * FRO... jwxt_loginfo" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -982,31 +962,6 @@
         <state relative-caret-position="115">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="13" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/vo/LoginfoVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-          <folding>
-            <element signature="e#475#476#0" expanded="false" />
-            <element signature="e#507#508#0" expanded="false" />
-            <element signature="e#558#559#0" expanded="false" />
-            <element signature="e#600#601#0" expanded="false" />
-            <element signature="e#634#635#0" expanded="false" />
-            <element signature="e#664#665#0" expanded="false" />
-            <element signature="e#710#711#0" expanded="false" />
-            <element signature="e#748#749#0" expanded="false" />
-            <element signature="e#783#784#0" expanded="false" />
-            <element signature="e#813#814#0" expanded="false" />
-            <element signature="e#860#861#0" expanded="false" />
-            <element signature="e#898#899#0" expanded="false" />
-            <element signature="e#935#936#0" expanded="false" />
-            <element signature="e#968#969#0" expanded="false" />
-            <element signature="e#1020#1021#0" expanded="false" />
-            <element signature="e#1064#1065#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1043,76 +998,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/IStudentinfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/common/ServerResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138">
+        <state relative-caret-position="23">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/LoginfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/common/ConnectionCAS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/LoginfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/StudentinfoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/ClassinfoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="21" column="44" lean-forward="true" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/ClassinfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/common/Const.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1125,20 +1014,184 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/common/ConnectionCAS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2093">
-          <caret line="109" column="9" lean-forward="false" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+        <state relative-caret-position="190">
+          <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
           <folding>
-            <element signature="e#9679#9694#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/common/Const.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/IStudentinfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/StudentinfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="71" column="2" lean-forward="false" selection-start-line="71" selection-start-column="2" selection-end-line="71" selection-end-column="2" />
+          <folding>
+            <marker date="1502635073767" expanded="true" signature="994:1325" ph="insert into jwxt_studentinfo... " />
+            <marker date="1502635073767" expanded="true" signature="2615:2698" ph="SELECT * FRO... jwxt_studentinfo" />
+            <marker date="1502635073767" expanded="true" signature="2764:2892" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/StudentinfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/ClassinfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/IClassinfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/ClassinfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="34" column="56" lean-forward="false" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/ClassinfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="24" column="135" lean-forward="false" selection-start-line="24" selection-start-column="135" selection-end-line="24" selection-end-column="135" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ClassinfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="165" column="6" lean-forward="false" selection-start-line="165" selection-start-column="6" selection-end-line="165" selection-end-column="6" />
+          <folding>
+            <marker date="1503302012489" expanded="true" signature="1422:1543" ph="select from jwxt_classinfo" />
+            <marker date="1503302012489" expanded="true" signature="1629:1704" ph="delete from " />
+            <marker date="1503302012489" expanded="true" signature="1785:2323" ph="insert into jwxt_classinfo... " />
+            <marker date="1503302012489" expanded="true" signature="4301:5347" ph="update jwxt_... " />
+            <marker date="1503302012489" expanded="true" signature="5440:5992" ph="update jwxt_... " />
+            <marker date="1503302012489" expanded="true" signature="6070:6098" ph="SELECT * FRO... jwxt_classinfo" />
+            <marker date="1503302012489" expanded="true" signature="6168:6363" ph="SELECT * FRO... jwxt_classinfo" />
+            <marker date="1503302012489" expanded="true" signature="6475:6620" ph="select count... jwxt_classinfo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/pojo/StudentinfoData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#2148#2149#0" expanded="true" />
+            <element signature="e#2190#2191#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/StudentinfoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="90" column="98" lean-forward="false" selection-start-line="90" selection-start-column="98" selection-end-line="90" selection-end-column="98" />
+        <state relative-caret-position="50">
+          <caret line="35" column="81" lean-forward="false" selection-start-line="35" selection-start-column="74" selection-end-line="35" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/impl/LoginfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="17" column="48" lean-forward="false" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/LoginfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="94" column="2" lean-forward="false" selection-start-line="94" selection-start-column="2" selection-end-line="94" selection-end-column="2" />
+          <folding>
+            <marker date="1503061043862" expanded="true" signature="902:1025" ph="select from jwxt_loginfo" />
+            <marker date="1503061043862" expanded="true" signature="1112:1189" ph="delete from " />
+            <marker date="1503061043862" expanded="true" signature="1268:1514" ph="insert into jwxt_loginfo... " />
+            <marker date="1503061043862" expanded="true" signature="2610:3078" ph="update jwxt_... " />
+            <marker date="1503061043862" expanded="true" signature="3169:3422" ph="update jwxt_... " />
+            <marker date="1503061043862" expanded="true" signature="3498:3579" ph="SELECT * FRO... jwxt_loginfo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/dao/LoginfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/service/ILoginfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/StudentinfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="213" column="0" lean-forward="true" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+          <folding>
+            <element signature="e#9762#9777#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/vo/LoginfoVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="41" column="16" lean-forward="false" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+          <folding>
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#898#899#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jwxt/controller/protal/LoginfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>

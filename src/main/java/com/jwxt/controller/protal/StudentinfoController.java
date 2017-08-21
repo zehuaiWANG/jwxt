@@ -27,6 +27,7 @@ public class StudentinfoController {
     private IStudentinfoService iStudentinfoService;
     @Autowired
     private IClassinfoService iClassinfoService;
+
     @RequestMapping(value="login.do",method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<String> login(String username, String password, HttpSession session){
@@ -79,7 +80,6 @@ public class StudentinfoController {
                }
                data.setTime(str[j].split("_")[2]);
                switch (str[j].split("_")[2]){
-                   case "8:00-9:50":data.setClass_time_num(1);break;
                    case "8:00-10:00":data.setClass_time_num(1);break;
                    case "10:00-11:50":data.setClass_time_num(2);break;
                    case "10:00-12:00":data.setClass_time_num(2);break;
@@ -137,6 +137,9 @@ public class StudentinfoController {
         }
         String username = session.getAttribute("username").toString();
         Integer studentid = Integer.parseInt(username);
+        if (!iClassinfoService.checkClassinfo(classid,classname,classtime)){
+            return ServerResponse.createByErrorMessage("选课失败");
+        }
         return iStudentinfoService.insert(session,classid,classname,classtime,pageNum,pageSize);
     }
 
@@ -207,5 +210,16 @@ public class StudentinfoController {
         pageResult.setHasNextPage(pageNum != pageResult.getSize());
         pageResult.setHasPreviousPage(pageNum != 1);
         return ServerResponse.createBySuccess(pageResult);
+    }
+
+    @RequestMapping(value ="listStuinfo.do",method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<List<Studentinfo>> listStuinfo(HttpSession session){
+        if (session.getAttribute("username") == null){
+            return ServerResponse.createErrorCodeMessage(ResponseCode.NEED_LOOGIN.getCode(),"用户未登录,请登录管理员");
+        }
+        String username = session.getAttribute("username").toString();
+        Integer studentid = Integer.parseInt(username);
+        return ServerResponse.createBySuccess(iStudentinfoService.selectStudnetinfoByPrimaryKey(studentid));
     }
 }

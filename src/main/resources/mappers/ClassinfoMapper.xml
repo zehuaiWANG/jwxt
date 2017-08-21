@@ -160,4 +160,10 @@
     or (class_name LIKE concat(concat('%',#{info}),'%'))
     or (class_tutor LIKE concat(concat('%',#{info}),'%'))
   </select>
+  <select id="selectByClassidAndClassnameAndClasstime" parameterType="map" resultType="int">
+      select count(1) from jwxt_classinfo
+      where class_id = #{classid}
+      and class_name = #{classname}
+      and class_location = #{classtime}
+  </select>
 </mapper>
