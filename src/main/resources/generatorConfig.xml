@@ -70,7 +70,7 @@
 
 
 
-        <table tableName="jwxt_classinfo" domainObjectName="Classinfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="jwxt_notice" domainObjectName="Notice" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
 
 
 

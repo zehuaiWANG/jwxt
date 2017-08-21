@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jwxt.dao.NoticeMapper" >
+  <resultMap id="BaseResultMap" type="com.jwxt.pojo.Notice" >
+    <constructor >
+      <idArg column="notice_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="notice_contact" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="notice_author" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="updateTime" jdbcType="DATE" javaType="java.util.Date" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    notice_id, notice_contact, notice_author, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from jwxt_notice
+    where notice_id = #{noticeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from jwxt_notice
+    where notice_id = #{noticeId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jwxt.pojo.Notice" >
+    insert into jwxt_notice (notice_id, notice_contact, notice_author, 
+      updateTime)
+    values (#{noticeId,jdbcType=INTEGER}, #{noticeContact,jdbcType=VARCHAR}, #{noticeAuthor,jdbcType=VARCHAR}, 
+      #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jwxt.pojo.Notice" >
+    insert into jwxt_notice
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="noticeId != null" >
+        notice_id,
+      </if>
+      <if test="noticeContact != null" >
+        notice_contact,
+      </if>
+      <if test="noticeAuthor != null" >
+        notice_author,
+      </if>
+      <if test="updatetime != null" >
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="noticeId != null" >
+        #{noticeId,jdbcType=INTEGER},
+      </if>
+      <if test="noticeContact != null" >
+        #{noticeContact,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeAuthor != null" >
+        #{noticeAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jwxt.pojo.Notice" >
+    update jwxt_notice
+    <set >
+      <if test="noticeContact != null" >
+        notice_contact = #{noticeContact,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeAuthor != null" >
+        notice_author = #{noticeAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where notice_id = #{noticeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jwxt.pojo.Notice" >
+    update jwxt_notice
+    set notice_contact = #{noticeContact,jdbcType=VARCHAR},
+      notice_author = #{noticeAuthor,jdbcType=VARCHAR},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where notice_id = #{noticeId,jdbcType=INTEGER}
+  </update>
+  <select id="findAllNotice" resultMap="BaseResultMap">
+    SELECT * FROM jwxt_notice
+  </select>
+</mapper>
