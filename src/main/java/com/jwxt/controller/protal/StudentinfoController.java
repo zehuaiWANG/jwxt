@@ -80,19 +80,32 @@ public class StudentinfoController {
                }
                data.setTime(str[j].split("_")[2]);
                switch (str[j].split("_")[2]){
-                   case "8:00-10:00":data.setClass_time_num(1);break;
-                   case "10:00-11:50":data.setClass_time_num(2);break;
-                   case "10:00-12:00":data.setClass_time_num(2);break;
-                   case "10:10-12:00":data.setClass_time_num(2);break;
-                   case "8:00-11:50":data.setClass_time_num(12);break;
-                   case "8:00-12:00":data.setClass_time_num(12);break;
-                   case "14:00-15:50":data.setClass_time_num(3);break;
-                   case "14:00-16:00":data.setClass_time_num(3);break;
-                   case "16:00-17:50":data.setClass_time_num(4);break;
-                   case "16:00-18:00":data.setClass_time_num(4);break;
-                   case "16:10-18:00":data.setClass_time_num(4);break;
-                   case "19:00-21:00":data.setClass_time_num(5);break;
-                   case "19:00-20:50":data.setClass_time_num(5);break;
+                   case "8:00-9:00":data.setClass_time_num(1);break;
+                   case "9:00-10:00":data.setClass_time_num(2);break;
+                   case "10:00-11:00":data.setClass_time_num(3);break;
+                   case "11:00-12:00":data.setClass_time_num(4);break;
+                   case "14:00-15:00":data.setClass_time_num(5);break;
+                   case "15:00-16:00":data.setClass_time_num(6);break;
+                   case "16:00-17:00":data.setClass_time_num(7);break;
+                   case "17:00-18:00":data.setClass_time_num(8);break;
+                   case "19:00-20:00":data.setClass_time_num(9);break;
+                   case "20:00-21:00":data.setClass_time_num(10);break;
+                   case "21:00-22:00":data.setClass_time_num(11);break;
+                   case "8:00-10:00":data.setClass_time_num(12);break;
+                   case "8:00-11:00":data.setClass_time_num(123);break;
+                   case "8:00-12:00":data.setClass_time_num(1234);break;
+                   case "9:00-11:00":data.setClass_time_num(23);break;
+                   case "9:00-12:00":data.setClass_time_num(234);break;
+                   case "10:00-12:00":data.setClass_time_num(34);break;
+                   case "14:00-16:00":data.setClass_time_num(56);break;
+                   case "14:00-17:00":data.setClass_time_num(567);break;
+                   case "14:00-18:00":data.setClass_time_num(5678);break;
+                   case "15:00-17:00":data.setClass_time_num(67);break;
+                   case "15:00-18:00":data.setClass_time_num(678);break;
+                   case "16:00-18:00":data.setClass_time_num(78);break;
+                   case "19:00-21:00":data.setClass_time_num(910);break;
+                   case "19:00-22:00":data.setClass_time_num(91011);break;
+                   case "20:00-22:00":data.setClass_time_num(1011);break;
                    default:data.setClass_time_num(0);break;
                }
                data.setLocation(str[j].split("_")[3]);
@@ -145,14 +158,29 @@ public class StudentinfoController {
 
     @RequestMapping(value ="selectInfo.do",method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<List<Classinfo>> selectInfo(HttpSession session,String info){
+    public ServerResponse<PageInfo> selectInfo(HttpSession session,String info,
+                                                      @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+                                                      @RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
         if (session.getAttribute("username") == null){
             return ServerResponse.createErrorCodeMessage(ResponseCode.NEED_LOOGIN.getCode(),"用户未登录,请登录管理员");
         }
         List<Classinfo> list = iClassinfoService.selectInfo(info);
+        int size =list.size();
+        PageHelper.startPage(pageNum,pageSize);
         for (int i=0;i<list.size();i++)
             list.get(i).setClassVacancies( new Integer(insertstuinfo(session,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
-        return ServerResponse.createBySuccess(list);
+        PageInfo pageResult = new PageInfo(list);
+        pageResult.setSize((size+pageSize-1)/pageSize);
+        pageResult.setPageNum(pageNum);
+        pageResult.setPageSize(pageSize);
+        pageResult.setPrePage(pageNum-1);
+        pageResult.setNextPage(pageNum+1);
+        pageResult.setLastPage(pageResult.getSize());
+        pageResult.setIsFirstPage(pageNum == 1);
+        pageResult.setIsLastPage(pageNum == pageResult.getSize());
+        pageResult.setHasNextPage(pageNum != pageResult.getSize());
+        pageResult.setHasPreviousPage(pageNum != 1);
+        return ServerResponse.createBySuccess(pageResult);
     }
 
     @RequestMapping(value ="delstuinfo.do",method = RequestMethod.POST)

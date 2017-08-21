@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -37,6 +39,7 @@ public class LoginfoController {
             loginfoVo.setUpdateTime(DateTimeUtil.dateToStr(loginfoItem.getUpdateTime()));
             list2.add(loginfoVo);
         }
+        Collections.reverse(list2);
         return list2;
     }
 }

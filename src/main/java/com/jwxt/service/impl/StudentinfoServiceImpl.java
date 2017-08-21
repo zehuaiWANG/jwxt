@@ -74,7 +74,7 @@ public class StudentinfoServiceImpl implements IStudentinfoService{
            /* PageInfo a = new StudentinfoController().fo(studentid,pageNum,pageSize);*/
             return ServerResponse.createBySuccess("选课成功", b.fo(session,pageNum,pageSize).getData());
         }
-        return ServerResponse.createBySuccessMessage("课程冲突");
+        return ServerResponse.createBySuccess("课程冲突",b.fo(session,pageNum,pageSize).getData());
     }
 
     public ServerResponse<PageInfo> delstuinfo(HttpSession session, String classid, int pageNum,int pageSize){
