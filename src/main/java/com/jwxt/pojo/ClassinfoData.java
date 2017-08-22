@@ -25,7 +25,12 @@ public class ClassinfoData {
 
     private Integer conflit;
 
-    public ClassinfoData(String classId, String className, Integer classCredit, String classTutor, String classTime, String classLocation, Integer classVacancies, Date createTime, Date updateTime, Integer necessary,Integer conflit) {
+    private Integer opento;
+
+    public ClassinfoData(String classId, String className, Integer classCredit,
+                         String classTutor, String classTime, String classLocation,
+                         Integer classVacancies, Date createTime, Date updateTime,
+                         Integer necessary,Integer conflit,Integer opento) {
         this.classId = classId;
         this.className = className;
         this.classCredit = classCredit;
@@ -37,6 +42,7 @@ public class ClassinfoData {
         this.updateTime = updateTime;
         this.necessary = necessary;
         this.conflit = conflit;
+        this.opento = opento;
     }
 
     public ClassinfoData() {
@@ -129,5 +135,13 @@ public class ClassinfoData {
 
     public void setConflit(Integer conflit) {
         this.conflit = conflit;
+    }
+
+    public Integer getOpento() {
+        return opento;
+    }
+
+    public void setOpento(Integer opento) {
+        this.opento = opento;
     }
 }

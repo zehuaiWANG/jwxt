@@ -1,5 +1,7 @@
 package com.jwxt.controller.protal;
 
+import com.jwxt.common.ResponseCode;
+import com.jwxt.common.ServerResponse;
 import com.jwxt.pojo.Loginfo;
 import com.jwxt.service.ILoginfoService;
 import com.jwxt.util.DateTimeUtil;
@@ -26,7 +28,10 @@ public class LoginfoController {
     private ILoginfoService iLoginfoService;
     @RequestMapping(value ="getallLoginfo.do",method = RequestMethod.POST)
     @ResponseBody
-    public List<LoginfoVo> getallLoginfo(HttpSession session){
+    public ServerResponse<List<LoginfoVo>> getallLoginfo(HttpSession session){
+        if (session.getAttribute("username") == null){
+            return ServerResponse.createErrorCodeMessage(ResponseCode.NEED_LOOGIN.getCode(),"用户未登录,请登录管理员");
+        }
         String username = session.getAttribute("username").toString();
         Integer studentid = Integer.parseInt(username);
         List<Loginfo> list = iLoginfoService.findLoginfoList(studentid);
@@ -40,6 +45,6 @@ public class LoginfoController {
             list2.add(loginfoVo);
         }
         Collections.reverse(list2);
-        return list2;
+        return ServerResponse.createBySuccess(list2);
     }
 }

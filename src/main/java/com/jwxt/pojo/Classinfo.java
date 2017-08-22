@@ -23,8 +23,9 @@ public class Classinfo {
 
     private Integer necessary;
 
+    private Integer opento;
 
-    public Classinfo(String classId, String className, Integer classCredit, String classTutor, String classTime, String classLocation, Integer classVacancies, Date createTime, Date updateTime, Integer necessary) {
+    public Classinfo(String classId, String className, Integer classCredit, String classTutor, String classTime, String classLocation, Integer classVacancies, Date createTime, Date updateTime, Integer necessary, Integer opento) {
         this.classId = classId;
         this.className = className;
         this.classCredit = classCredit;
@@ -35,6 +36,7 @@ public class Classinfo {
         this.createTime = createTime;
         this.updateTime = updateTime;
         this.necessary = necessary;
+        this.opento = opento;
     }
 
     public Classinfo() {
@@ -119,5 +121,13 @@ public class Classinfo {
 
     public void setNecessary(Integer necessary) {
         this.necessary = necessary;
+    }
+
+    public Integer getOpento() {
+        return opento;
+    }
+
+    public void setOpento(Integer opento) {
+        this.opento = opento;
     }
 }

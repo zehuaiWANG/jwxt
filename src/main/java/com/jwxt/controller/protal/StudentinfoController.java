@@ -221,6 +221,7 @@ public class StudentinfoController {
             a.setClassTutor(list.get(i).getClassTutor());
             a.setClassTime(list.get(i).getClassTime());
             a.setClassVacancies(list.get(i).getClassVacancies());
+            a.setOpento(list.get(i).getOpento());
             a.setConflit(new Integer(insertstuinfo(session,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
             a.setNecessary(list.get(i).getNecessary());
             list2.add(a);

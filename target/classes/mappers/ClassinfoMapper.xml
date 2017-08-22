@@ -13,11 +13,12 @@
       <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="necessary" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="openTo" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
     class_id, class_name, class_credit, class_tutor, class_time, class_location, class_vacancies, 
-    create_time, update_time, necessary
+    create_time, update_time, necessary, openTo
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
@@ -33,11 +34,11 @@
     insert into jwxt_classinfo (class_id, class_name, class_credit, 
       class_tutor, class_time, class_location, 
       class_vacancies, create_time, update_time, 
-      necessary)
+      necessary, openTo)
     values (#{classId,jdbcType=VARCHAR}, #{className,jdbcType=VARCHAR}, #{classCredit,jdbcType=INTEGER}, 
       #{classTutor,jdbcType=VARCHAR}, #{classTime,jdbcType=VARCHAR}, #{classLocation,jdbcType=VARCHAR}, 
       #{classVacancies,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{necessary,jdbcType=INTEGER})
+      #{necessary,jdbcType=INTEGER}, #{opento,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.jwxt.pojo.Classinfo" >
     insert into jwxt_classinfo
@@ -72,6 +73,9 @@
       <if test="necessary != null" >
         necessary,
       </if>
+      <if test="opento != null" >
+        openTo,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="classId != null" >
@@ -103,6 +107,9 @@
       </if>
       <if test="necessary != null" >
         #{necessary,jdbcType=INTEGER},
+      </if>
+      <if test="opento != null" >
+        #{opento,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -136,6 +143,9 @@
       <if test="necessary != null" >
         necessary = #{necessary,jdbcType=INTEGER},
       </if>
+      <if test="opento != null" >
+        openTo = #{opento,jdbcType=INTEGER},
+      </if>
     </set>
     where class_id = #{classId,jdbcType=VARCHAR}
   </update>
@@ -149,7 +159,8 @@
       class_vacancies = #{classVacancies,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      necessary = #{necessary,jdbcType=INTEGER}
+      necessary = #{necessary,jdbcType=INTEGER},
+      openTo = #{opento,jdbcType=INTEGER}
     where class_id = #{classId,jdbcType=VARCHAR}
   </update>
   <select id="selectAllClassInfo" resultMap="BaseResultMap">
@@ -161,9 +172,9 @@
     or (class_tutor LIKE concat(concat('%',#{info}),'%'))
   </select>
   <select id="selectByClassidAndClassnameAndClasstime" parameterType="map" resultType="int">
-      select count(1) from jwxt_classinfo
-      where class_id = #{classid}
-      and class_name = #{classname}
-      and class_location = #{classtime}
+    select count(1) from jwxt_classinfo
+    where class_id = #{classid}
+    and class_name = #{classname}
+    and class_location = #{classtime}
   </select>
 </mapper>
