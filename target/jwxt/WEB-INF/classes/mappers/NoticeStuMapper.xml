@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jwxt.dao.NoticeStuMapper" >
+  <resultMap id="BaseResultMap" type="com.jwxt.pojo.NoticeStu" >
+    <constructor >
+      <arg column="studentid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="noticeid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.jwxt.pojo.NoticeStu" >
+    insert into jwxt_noticeStu (studentid, noticeid)
+    values (#{studentid,jdbcType=INTEGER}, #{noticeid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jwxt.pojo.NoticeStu" >
+    insert into jwxt_noticeStu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="studentid != null" >
+        studentid,
+      </if>
+      <if test="noticeid != null" >
+        noticeid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="studentid != null" >
+        #{studentid,jdbcType=INTEGER},
+      </if>
+      <if test="noticeid != null" >
+        #{noticeid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="findNoticeInfo" parameterType="map" resultType="int">
+    select count(1) from jwxt_noticeStu
+    where studentid = #{studentid}
+  </select>
+</mapper>

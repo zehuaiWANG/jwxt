@@ -18,6 +18,7 @@ public class NoticeController {
     @Autowired
     private INoticeService iNoticeService;
 
+
     @RequestMapping(value="insert.do",method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<String> insert(String contact, String author){
