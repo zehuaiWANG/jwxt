@@ -39,6 +39,13 @@ public class StudentinfoController {
         }
     }
 
+    @RequestMapping(value ="logout.do",method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<String> logout(HttpSession session){
+        session.removeAttribute("username");
+        return ServerResponse.createBySuccess("登出成功");
+    }
+
     @RequestMapping(value ="selectstuinfoByPrimaryKey.do",method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<List<StudentinfoData>> selectstuinfoByPrimaryKey(HttpSession session){
@@ -164,13 +171,31 @@ public class StudentinfoController {
         if (session.getAttribute("username") == null){
             return ServerResponse.createErrorCodeMessage(ResponseCode.NEED_LOOGIN.getCode(),"用户未登录,请登录管理员");
         }
-        List<Classinfo> list = iClassinfoService.selectInfo(info);
-        int size =list.size();
+        List<Classinfo> list3 = iClassinfoService.findClassinfoList();
+        int size3 = list3.size();
         PageHelper.startPage(pageNum,pageSize);
-        for (int i=0;i<list.size();i++)
-            list.get(i).setClassVacancies( new Integer(insertstuinfo(session,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
-        PageInfo pageResult = new PageInfo(list);
-        pageResult.setSize((size+pageSize-1)/pageSize);
+        List<Classinfo> list = iClassinfoService.selectInfo(info);
+        List<ClassinfoData>list2 = new ArrayList<ClassinfoData>();
+        for(int i = 0;i<list.size();i++){
+            ClassinfoData a = new ClassinfoData();
+            a.setClassName(list.get(i).getClassName());
+            a.setUpdateTime(list.get(i).getUpdateTime());
+            a.setCreateTime(list.get(i).getCreateTime());
+            a.setClassName(list.get(i).getClassName());
+            a.setClassId(list.get(i).getClassId());
+            a.setClassLocation(list.get(i).getClassLocation());
+            a.setClassCredit(list.get(i).getClassCredit());
+            a.setClassTutor(list.get(i).getClassTutor());
+            a.setClassTime(list.get(i).getClassTime());
+            a.setClassVacancies(list.get(i).getClassVacancies());
+            a.setOpento(list.get(i).getOpento());
+            a.setConflit(new Integer(insertstuinfo(session,list.get(i).getClassId(),list.get(i).getClassLocation()).getStatus()));
+            a.setNecessary(list.get(i).getNecessary());
+            list2.add(a);
+        }
+        PageInfo pageResult = new PageInfo(list2);
+        //这个算法可牛逼了
+        pageResult.setSize((size3+pageSize-1)/pageSize);
         pageResult.setPageNum(pageNum);
         pageResult.setPageSize(pageSize);
         pageResult.setPrePage(pageNum-1);
@@ -250,5 +275,16 @@ public class StudentinfoController {
         String username = session.getAttribute("username").toString();
         Integer studentid = Integer.parseInt(username);
         return ServerResponse.createBySuccess(iStudentinfoService.selectStudnetinfoByPrimaryKey(studentid));
+    }
+
+    @RequestMapping(value ="studentid.do",method = RequestMethod.POST)
+    @ResponseBody
+    public int studentid(HttpSession session){
+        if (session.getAttribute("username") == null){
+            return 0;
+        }
+        String username = session.getAttribute("username").toString();
+        Integer studentid = Integer.parseInt(username);
+        return studentid;
     }
 }

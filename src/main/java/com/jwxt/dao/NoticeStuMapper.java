@@ -8,4 +8,6 @@ public interface NoticeStuMapper {
     int insertSelective(NoticeStu record);
 
     int findNoticeInfo(Integer studentid);
+
+    int delet(Integer studentid);
 }

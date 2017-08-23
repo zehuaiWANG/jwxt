@@ -34,4 +34,8 @@
     select count(1) from jwxt_noticeStu
     where studentid = #{studentid}
   </select>
+  <delete id="delet" parameterType="java.lang.Integer" >
+    DELETE FROM  jwxt_noticeStu
+    where studentid = #{studentid}
+  </delete>
 </mapper>

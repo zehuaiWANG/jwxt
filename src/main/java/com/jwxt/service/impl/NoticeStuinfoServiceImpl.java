@@ -31,4 +31,10 @@ public class NoticeStuinfoServiceImpl implements INoticeStuinfoService {
             return ServerResponse.createBySuccess("增加成功");
         return ServerResponse.createByErrorMessage("增加失败");
     }
+
+    @Override
+    public ServerResponse<String> delNoticeStu(Integer studentid){
+        noticeStuMapper.delet(studentid);
+        return ServerResponse.createBySuccess("删除成功");
+    }
 }

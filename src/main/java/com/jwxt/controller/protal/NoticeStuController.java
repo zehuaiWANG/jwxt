@@ -45,12 +45,26 @@ public class NoticeStuController {
         return iNoticeStuinfoService.insertNoticeStu(studentid,noticeId);
     }
 
+    @RequestMapping(value="delNotice.do",method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<String> delNotice(HttpSession session){
+        if (session.getAttribute("username") == null){
+            return ServerResponse.createErrorCodeMessage(ResponseCode.NEED_LOOGIN.getCode(),"用户未登录,请登录管理员");
+        }
+        String username = session.getAttribute("username").toString();
+        Integer studentid = Integer.parseInt(username);
+        return iNoticeStuinfoService.delNoticeStu(studentid);
+    }
+
+
     @RequestMapping(value = "readNotice.do",method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<String> readall(HttpSession session){
         List<NoticeVo>list = iNoticeService.listAllNotice();
-        for (int i=0;i<list.size();i++)
-            insertNotice(session,list.get(i).getNoticeId());
+        delNotice(session);
+        for (int i=0;i<list.size();i++) {
+            insertNotice(session, list.get(i).getNoticeId());
+        }
         return ServerResponse.createBySuccess("已读");
     }
 }
