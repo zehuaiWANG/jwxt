@@ -14,4 +14,6 @@ public interface StudentinfoMapper {
     List<Studentinfo> selectstuinfoByPrimaryKey(@Param("studentId") Integer studentId);
 
     int delstuinfo(@Param("studentId") Integer studentId,@Param("classId") String classId);
+
+    List<Studentinfo> findall();
 }

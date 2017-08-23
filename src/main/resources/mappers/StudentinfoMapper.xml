@@ -74,4 +74,7 @@
     where student_id = #{studentId,jdbcType=INTEGER}
     and class_id = #{classId,jdbcType=VARCHAR}
   </delete>
+  <select id="findall" resultMap="BaseResultMap">
+    SELECT * FROM jwxt_studentinfo
+  </select>
 </mapper>
