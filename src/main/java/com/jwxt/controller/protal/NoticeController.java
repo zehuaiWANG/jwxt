@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -18,11 +19,15 @@ public class NoticeController {
     @Autowired
     private INoticeService iNoticeService;
 
+    @Autowired
+    private StudentinfoController studentinfoController;
 
     @RequestMapping(value="insert.do",method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<String> insert(String contact, String author){
-        return iNoticeService.insert(contact,author);
+    public ServerResponse<String> insert(HttpSession session,String contact, String author){
+        if (studentinfoController.isAdmin(session).getData().equals("1"))
+            return iNoticeService.insert(contact,author);
+        return ServerResponse.createByErrorMessage("请登录管理员");
     }
 
     @RequestMapping(value="delet.do",method = RequestMethod.POST)
@@ -33,13 +38,17 @@ public class NoticeController {
 
     @RequestMapping(value="updateContact.do",method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<String> updateContact(String contact,String author,Integer id){
-        return iNoticeService.updateContact(contact,author,id);
+    public ServerResponse<String> updateContact(HttpSession session,String contact,String author,Integer id){
+        if (studentinfoController.isAdmin(session).getData().equals("1"))
+            return iNoticeService.updateContact(contact,author,id);
+        return ServerResponse.createByErrorMessage("请登录管理员");
     }
 
     @RequestMapping(value="listAll.do",method = RequestMethod.POST)
     @ResponseBody
-    public List<NoticeVo> listAllNotice(){
-        return iNoticeService.listAllNotice();
+    public ServerResponse<List<NoticeVo>> listAllNotice(HttpSession session){
+        if (studentinfoController.isAdmin(session).getData().equals("1"))
+             return ServerResponse.createBySuccess(iNoticeService.listAllNotice());
+        return ServerResponse.createByErrorMessage("请登录管理员");
     }
 }

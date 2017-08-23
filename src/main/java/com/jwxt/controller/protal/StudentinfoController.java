@@ -291,4 +291,18 @@ public class StudentinfoController {
         Integer studentid = Integer.parseInt(username);
         return studentid;
     }
+
+    @RequestMapping(value ="isAdmin.do",method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<String> isAdmin(HttpSession session){
+        if (session.getAttribute("username") == null){
+            return ServerResponse.createErrorCodeMessage(ResponseCode.NEED_LOOGIN.getCode(),"用户未登录,请登录管理员");
+        }
+        if (session.getAttribute("username").equals("jwxtadmin")){
+            return ServerResponse.createBySuccess("1");
+        }
+        else {
+            return ServerResponse.createBySuccess("2");
+        }
+    }
 }
