@@ -177,4 +177,15 @@
     and class_name = #{classname}
     and class_location = #{classtime}
   </select>
+  <delete id="delet" parameterType="map">
+    DELETE  from jwxt_classinfo
+    where class_id = #{classid}
+    and class_name = #{classname}
+  </delete>
+  <select id="findByIdAndName" parameterType="map" resultType="int">
+    select count(1) from jwxt_classinfo
+    where class_id = #{classid}
+    and class_name = #{classname}
+  </select>
+
 </mapper>

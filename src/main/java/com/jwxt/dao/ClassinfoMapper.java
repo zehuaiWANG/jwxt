@@ -23,4 +23,9 @@ public interface ClassinfoMapper {
     List<Classinfo> selectInfo(String info);
 
     int selectByClassidAndClassnameAndClasstime(@Param("classid") String classid, @Param("classname") String classname, @Param("classtime") String classtime);
+
+    int delet(@Param("classid")String classid,@Param("classname")String classname);
+
+    int findByIdAndName(@Param("classid")String classid,@Param("classname")String classname);
+
 }

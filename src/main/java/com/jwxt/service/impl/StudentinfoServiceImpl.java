@@ -43,6 +43,7 @@ public class StudentinfoServiceImpl implements IStudentinfoService{
                   for (int k=0;k<strflag.length;k++){
                       if (
                               str[j].split("_")[1].equals(strflag[k].split("_")[1])&&
+                                      checktime(str[j].split("_")[2],strflag[k].split("_")[2])&&
                                       str[j].split("_")[2].equals(strflag[k].split("_")[2])&&
                                       Integer.parseInt(str[j].split("_")[0])+Integer.parseInt(strflag[k].split("_")[0])!=3
                               ) flag = true;
@@ -91,5 +92,22 @@ public class StudentinfoServiceImpl implements IStudentinfoService{
             return ServerResponse.createBySuccess("退课成功", b.fo(session,pageNum,pageSize).getData());
         }
         return ServerResponse.createByErrorMessage("退课失败");
+    }
+
+    //这是一个牛得不行的算法
+    public boolean checktime(String time1,String time2){
+        String str1[] = time1.split(":");
+        int num1 = Integer.parseInt(str1[0]);
+        int num2 = Integer.parseInt(str1[1].split("-")[1]);
+        String str2[] = time2.split(":");
+        int num3 = Integer.parseInt(str2[0]);
+        int num4 = Integer.parseInt(str2[1].split("-")[1]);
+        System.out.println(num1+"  "+num2+"  "+num3+"  "+num4);
+        boolean flag = false;
+        if ( (num1<num3&&num3<num2) || (num1<num4&&num4<num2) ||
+                (num3<num1&&num1<num4) || (num3<num2&&num2<num4)
+                || (num1 == num3&& num2 == num4)) flag =true;
+
+        return flag;
     }
 }

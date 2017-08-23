@@ -39,4 +39,32 @@ public class ClassinfoServiceImpl implements IClassinfoService{
             return false;
         }
     }
+
+    @Override
+    public ServerResponse<String>insert(Classinfo info){
+        int count = classinfoMapper.insert(info);
+        if (count > 0){
+            return ServerResponse.createBySuccess("插入成功");
+        }
+        return ServerResponse.createByErrorMessage("插入失败");
+    }
+
+    @Override
+    public  ServerResponse<String>delet(String classname,String classid){
+        int count =classinfoMapper.delet(classid,classname);
+        if(count > 0){
+            return ServerResponse.createBySuccess("删除成功");
+        }else{
+            return ServerResponse.createByErrorMessage("删除失败");
+        }
+    }
+
+    @Override
+    public boolean selectByIdAndName(String classid, String classname){
+        int count = classinfoMapper.findByIdAndName(classid,classname);
+        if (count > 0){
+            return true;
+        }else
+            return false;
+    }
 }
