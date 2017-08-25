@@ -56,6 +56,13 @@ public class NoticeStuController {
         return iNoticeStuinfoService.delNoticeStu(studentid);
     }
 
+    @RequestMapping(value="listAll.do ",method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<List<NoticeVo>> listAllNotice(HttpSession session){
+        return ServerResponse.createBySuccess(iNoticeService.listAllNotice());
+    }
+
+
 
     @RequestMapping(value = "readNotice.do",method = RequestMethod.POST)
     @ResponseBody
